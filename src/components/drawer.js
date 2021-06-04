@@ -15,7 +15,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import {Link} from 'react-router-dom';
 import MailIcon from '@material-ui/icons/Mail';
 // Random ICONS
 import MovieTwoToneIcon from '@material-ui/icons/MovieTwoTone';
@@ -145,11 +145,8 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {['Story', 'Legal', 'NGO', 'StarWarsAPI'].map((text, index) => (
-            <ListItem button key={text}>
-              {/* <ListItemIcon>{
-                index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} /> */}
+          {/* {['Story', 'Legal', 'NGO', 'StarWarsAPI'].map((text, index) => (
+            <ListItem button key={text} >
               <ListItemIcon>
                 {index === 0 && <ChangeHistoryOutlinedIcon />} 
                 {index === 1 && <GavelOutlinedIcon />}
@@ -157,11 +154,34 @@ export default function MiniDrawer() {
                 {index === 3 && <MovieTwoToneIcon />}
                   </ListItemIcon>
               <ListItemText primary={text} />
-            </ListItem>
-            
-          ))}
+            </ListItem> */}
+          <ListItem button key = 'Story' component={Link} to="/story">
+            <ListItemIcon>
+              <ChangeHistoryOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary = 'Story' />
+          </ListItem>
+          <ListItem button key = 'Legal' component={Link} to="/Legal">
+            <ListItemIcon>
+              <GavelOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary = 'Legal' />
+          </ListItem>
+          <ListItem button key = 'NGO' component={Link} to="/NGO">
+            <ListItemIcon>
+              <MailIcon />
+            </ListItemIcon>
+            <ListItemText primary = 'NGO' />
+          </ListItem>
+          <ListItem button key = 'StarWars' component={Link} to="/SW">
+            <ListItemIcon>
+              <MovieTwoToneIcon />
+            </ListItemIcon>
+            <ListItemText primary = 'StarWarsAPI' />
+          </ListItem>
+          ))
         </List>
-        <Divider />
+        {/* <Divider />
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
@@ -169,7 +189,7 @@ export default function MiniDrawer() {
               <ListItemText primary={text} />
             </ListItem>
           ))}
-        </List>
+        </List> */}
       </Drawer>
     </div>
   );
