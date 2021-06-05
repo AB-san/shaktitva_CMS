@@ -100,77 +100,78 @@ export default function MiniDrawer() {
   };
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, {
-              [classes.hide]: open,
-            })}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Shaktitva CMS
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        variant="permanent"
-        className={clsx(classes.drawer, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
-        })}
-        classes={{
-          paper: clsx({
+      <div className={classes.root}>
+        <CssBaseline />
+        <AppBar
+          position="fixed"
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: open,
+          })}
+        >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              className={clsx(classes.menuButton, {
+                [classes.hide]: open,
+              })}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap>
+              Shaktitva CMS
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          className={clsx(classes.drawer, {
             [classes.drawerOpen]: open,
             [classes.drawerClose]: !open,
-          }),
-        }}
-      >
-        <div className={classes.toolbar}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          <ListItem button key = 'Story' component={Link} to="/story">
-            <ListItemIcon>
-              <ChangeHistoryOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText primary = 'Story' />
-          </ListItem>
-          <ListItem button key = 'Legal' component={Link} to="/Legal">
-            <ListItemIcon>
-              <GavelOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText primary = 'Legal' />
-          </ListItem>
-          <ListItem button key = 'NGO' component={Link} to="/NGO">
-            <ListItemIcon>
-              <MailIcon />
-            </ListItemIcon>
-            <ListItemText primary = 'NGO' />
-          </ListItem>
-          <ListItem button key = 'StarWars' component={Link} to="/SW">
-            <ListItemIcon>
-              <MovieTwoToneIcon />
-            </ListItemIcon>
-            <ListItemText primary = 'StarWarsAPI' />
-          </ListItem>
-        </List>
-      </Drawer>
-    </div>
+          })}
+          classes={{
+            paper: clsx({
+              [classes.drawerOpen]: open,
+              [classes.drawerClose]: !open,
+            }),
+          }}
+        >
+          <div className={classes.toolbar}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
+          </div>
+          <Divider />
+          <List>
+            <ListItem button key = 'Story' component={Link} to="/story">
+              <ListItemIcon>
+                <ChangeHistoryOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'Story' />
+            </ListItem>
+            <ListItem button key = 'Legal' component={Link} to="/Legal">
+              <ListItemIcon>
+                <GavelOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'Legal' />
+            </ListItem>
+            <ListItem button key = 'NGO' component={Link} to="/NGO">
+              <ListItemIcon>
+                <MailIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'NGO' />
+            </ListItem>
+            <ListItem button key = 'StarWars' component={Link} to="/SW">
+              <ListItemIcon>
+                <MovieTwoToneIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'StarWarsAPI' />
+            </ListItem>
+          </List>
+        </Drawer>
+      </div>
+      
   );
 }

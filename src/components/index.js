@@ -1,8 +1,6 @@
 import React from 'react';
-import Drawer from './drawer'
+import Drawer from './Drawer/index'
 
 export default index=()=>{
-    <div>
         <Drawer />
-    </div>
 }
