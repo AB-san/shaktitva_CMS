@@ -145,16 +145,6 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {/* {['Story', 'Legal', 'NGO', 'StarWarsAPI'].map((text, index) => (
-            <ListItem button key={text} >
-              <ListItemIcon>
-                {index === 0 && <ChangeHistoryOutlinedIcon />} 
-                {index === 1 && <GavelOutlinedIcon />}
-                {index === 2 && <MailIcon />}
-                {index === 3 && <MovieTwoToneIcon />}
-                  </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem> */}
           <ListItem button key = 'Story' component={Link} to="/story">
             <ListItemIcon>
               <ChangeHistoryOutlinedIcon />
@@ -179,17 +169,7 @@ export default function MiniDrawer() {
             </ListItemIcon>
             <ListItemText primary = 'StarWarsAPI' />
           </ListItem>
-          ))
         </List>
-        {/* <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
       </Drawer>
     </div>
   );
