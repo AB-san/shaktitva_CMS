@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {Route,BrowserRouter} from 'react-router-dom';
-import { Drawer } from './components/index';
+import { Drawer } from '../components/index';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import {
@@ -9,7 +9,7 @@ import {
     NGO,
     Legal,
     StarWars
-  } from './pages/index';
+  } from '../pages/index';
   
 const Routes = () => {
     return (
