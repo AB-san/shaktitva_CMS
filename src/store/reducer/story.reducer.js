@@ -1,30 +1,49 @@
 import * as StoriesActions from '../action/story.actions';
 
 const initialState = {
-    stories: [],
+    en:[],
+    hi:[],
     loadingStories: false,
-    errorStories: null
+    errorStories: null,
 };
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case StoriesActions.GET_STORIES.REQUEST:
+        case StoriesActions.GET_ENGLISH_STORIES.REQUEST:
             return {
                 ...state,
                 loadingStories: true,
             };
-        case StoriesActions.GET_STORIES.SUCCESS:
+        case StoriesActions.GET_ENGLISH_STORIES.SUCCESS:
             return {
                 ...state,
-                stories: action.payload.stories,
+                en: action.payload.stories,
                 loadingStories: false,
             };
-        case StoriesActions.GET_STORIES.FAILURE:
+        case StoriesActions.GET_ENGLISH_STORIES.FAILURE:
             return {
-            ...state,
-            errorStories: action.payload,
-            loadingStories: false,
+                ...state,
+                errorStories: action.payload,
+                loadingStories: false,
             };
+        case StoriesActions.GET_HINDI_STORIES.REQUEST:
+            return {
+                ...state,
+                loadingStories: true
+            };
+        case StoriesActions.GET_HINDI_STORIES.SUCCESS:
+            return {
+                ...state,
+                hi: action.payload.stories,
+                loadingStories: false
+            };
+        case StoriesActions.GET_HINDI_STORIES.FAILURE:
+            return {
+                ...state,
+                errorStories: action.payload,
+                loadingStories: false
+            };
+
         default:
             return state;
     }

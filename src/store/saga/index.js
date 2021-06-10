@@ -1,9 +1,11 @@
 import { all } from "redux-saga/effects";
 
-import storySaga from './story.saga';
+import englishStorySaga from './story.english.saga';
+import hindiStorySaga from './story.hindi.saga';
 
 export default function* rootSaga(){
     yield all([
-        storySaga()
+        englishStorySaga(),
+        hindiStorySaga()
     ])
 }

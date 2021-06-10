@@ -1,10 +1,17 @@
 import { createRequestTypes, action } from "../../utils/redux";
 
-export const GET_STORIES = createRequestTypes("GET_STORIES");
+export const GET_ENGLISH_STORIES = createRequestTypes("GET_ENGLISH_STORIES");
 
-export const getStories = {
-    request: () => action(GET_STORIES.REQUEST),
-    success: (data) => action(GET_STORIES.SUCCESS, data),
-    failure: (error) => action(GET_STORIES.FAILURE, error),
-  };
- 
+export const GET_HINDI_STORIES = createRequestTypes("GET_HINDI_STORIES");
+
+export const getEnglishStories = {
+  request: () => action(GET_ENGLISH_STORIES.REQUEST),
+  success: (data) => action(GET_ENGLISH_STORIES.SUCCESS, data),
+  failure: (error) => action(GET_ENGLISH_STORIES.FAILURE, error),
+};
+
+export const getHindiStories = {
+  request: () => action(GET_HINDI_STORIES.REQUEST),
+  success: (data) => action(GET_HINDI_STORIES.SUCCESS, data),
+  failure: (error) => action(GET_HINDI_STORIES.FAILURE, error),
+};

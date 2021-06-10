@@ -56,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'nowrap',
   },
   drawerOpen: {
+    backgroundColor: '#50b8ae',
     width: drawerWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
@@ -63,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   drawerClose: {
+    backgroundColor: '#50b8ae',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -165,7 +167,7 @@ export default function MiniDrawer() {
               <ListItemText primary = 'NGO' />
             </ListItem>
             <ListItem button key = 'StarWars' component={Link} to="/SW">
-              <ListItemIcon>
+              <ListItemIcon >
                 <MovieTwoToneIcon />
               </ListItemIcon>
               <ListItemText primary = 'StarWarsAPI' />
