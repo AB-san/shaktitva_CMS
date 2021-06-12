@@ -8,7 +8,7 @@ import {
     Story,
     NGO,
     Legal,
-    StarWars
+    StoryDetailed
   } from '../pages/index';
   
 const Routes = () => {
@@ -16,8 +16,7 @@ const Routes = () => {
         <BrowserRouter>
             <CssBaseline />
             <Drawer />
-            
-            <Route path ="/Story">
+            <Route path ="/Story" exact>
                 <Story />
             </Route>
             
@@ -28,9 +27,8 @@ const Routes = () => {
             <Route path ="/Legal">
                 <Legal />
             </Route>
-            
-            <Route path ="/SW">
-                <StarWars />
+            <Route path ="/Story/:StoryID" exact>
+                <StoryDetailed />
             </Route>
         </BrowserRouter>
     )

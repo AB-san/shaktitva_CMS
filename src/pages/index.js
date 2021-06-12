@@ -1,11 +1,11 @@
 import Story from './Story/';
 import Legal from './Legal/';
-import StarWars from './StarWars/';
+import StoryDetailed from './StoryDetailed/';
 import NGO from './NGO/';
 
 export {
     Story,
     Legal,
-    StarWars,
+    StoryDetailed,
     NGO
 }

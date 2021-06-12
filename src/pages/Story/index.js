@@ -13,8 +13,8 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
 
-//TODO: Add theme using muitheme
-
+//TODO: ADD Story ID route
+import { Link } from 'react-router-dom';
 import { getEnglishStories,getHindiStories } from '../../store/action/story.actions';
 
 //React h5 Audio Player
@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-
   cardMedia: {
     paddingTop: '56.25%', // 16:9
   },
@@ -49,8 +48,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
   }
 }));
-
-
 
 
 const Stories = () => {
@@ -114,16 +111,21 @@ const [language, setlanguage] = useState("hi")
                       <Button size="small" color="primary">
                         Share
                   </Button>
-                      <Button size="small" color="primary">
+                      {/* <Button onClick={()=>{
+                        //TODO:ADD STORY DETAILED ROUTE HERE
+                        console.log(story.id);
+                        <Route path ={`quote/${story.id}`}>
+                        </Route>
+                       }} size="small" color="primary"> */}
+                  <Link to ={`/story/${story.id}`}>
                         Learn More
-                  </Button>
+                  </Link>
                     </CardActions>
                     <AudioPlayer
                       src={story.podcast_url}
                       autoPlay={false}
                     />
                   </Card>
-
                 </Grid>
               )
             })}

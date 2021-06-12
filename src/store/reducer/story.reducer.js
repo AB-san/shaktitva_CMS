@@ -43,7 +43,6 @@ export default function (state = initialState, action) {
                 errorStories: action.payload,
                 loadingStories: false
             };
-
         default:
             return state;
     }
