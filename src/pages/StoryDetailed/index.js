@@ -6,6 +6,10 @@ import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { getEnglishStories, getHindiStories } from '../../store/action/story.actions';
 
+//React h5 Audio Player
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
 const useStyles = makeStyles((theme) => ({
     heroContent: {
       backgroundColor: theme.palette.background.paper,
@@ -48,6 +52,10 @@ const storyDetailed = () =>{
           <Typography variant="h5" align="center" color="textSecondary" paragraph>
           {specificStory[0].main_text}
           </Typography>
+          <AudioPlayer
+                      src={specificStory.podcast_url}
+                      autoPlay={false}
+                    />
         </Container>
       </div>);
 };

@@ -17,9 +17,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { getEnglishStories,getHindiStories } from '../../store/action/story.actions';
 
-//React h5 Audio Player
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -111,20 +109,14 @@ const [language, setlanguage] = useState("hi")
                       <Button size="small" color="primary">
                         Share
                   </Button>
-                      {/* <Button onClick={()=>{
-                        //TODO:ADD STORY DETAILED ROUTE HERE
-                        console.log(story.id);
-                        <Route path ={`quote/${story.id}`}>
-                        </Route>
-                       }} size="small" color="primary"> */}
                   <Link to ={`/story/${story.id}`}>
                         Learn More
                   </Link>
                     </CardActions>
-                    <AudioPlayer
+                    {/* <AudioPlayer
                       src={story.podcast_url}
                       autoPlay={false}
-                    />
+                    /> */}
                   </Card>
                 </Grid>
               )
