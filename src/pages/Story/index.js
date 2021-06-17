@@ -56,13 +56,6 @@ const [language, setlanguage] = useState("hi")
     language === "en"?dispatch(getEnglishStories.request()):dispatch(getHindiStories.request());
   }, [language])
   
-  // useEffect( () =>{
-  //   if(language==="English")
-  //   dispatch(getEnglishStories.request());
-  //   else if(language === "Hindi")
-  //   dispatch(getHindiStories.request());
-  // },[language]);
-
 
   
   const classes = useStyles();
