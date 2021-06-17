@@ -6,12 +6,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { getEnglishStories, getHindiStories } from '../../store/action/story.actions';
-import { TextBox, Heading } from '../../components/index'
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import { TextBox, Heading, MediaComponent,MetaData} from '../../components/index'
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 //React h5 Audio Player
 import AudioPlayer from 'react-h5-audio-player';
@@ -24,14 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroButtons: {
     marginTop: theme.spacing(4),
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
+  }
 }));
 
 const storyDetailed = () => {
@@ -60,28 +50,19 @@ const storyDetailed = () => {
     <div className={classes.heroContent}>
       <Container>
         <Heading text={specificStory[0].heading} />
-        {/* <FormControl variant="filled" className={classes.formControl}>
-          <InputLabel id="demo-simple-select-filled-label">Language</InputLabel>
-          <Select
-            labelId="demo-simple-select-filled-label"
-            id="demo-simple-select-filled"
-            value={language}
-            onChange={handleChange}
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem >हिंदी</MenuItem>
-            <MenuItem >English</MenuItem>
-          </Select>
-        </FormControl> */}
-        <TextBox story={specificStory[0].main_text} />
-        <Grid md={6} >
-          <TextBox story={specificStory[0].flash_card} />
-        </Grid>
-        <Grid md={6}>
-          <TextBox story={specificStory[0].moral} />
-        </Grid>
+    <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
+          <Button > English</Button>
+          <Button > हिंदी</Button>
+    </ButtonGroup>
+    <MetaData 
+    Category={specificStory[0].category_id} 
+    Org={specificStory[0].organisation_id} 
+    DOP={specificStory[0].date_to_publish} 
+    Status={specificStory[0].status}
+    />
+        <TextBox text={specificStory[0].main_text} />
+          <TextBox text={specificStory[0].flash_card} />
+          <TextBox text={specificStory[0].moral} />
         <AudioPlayer
           src={specificStory[0].podcast_url}
           autoPlay={false}

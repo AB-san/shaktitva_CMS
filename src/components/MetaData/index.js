@@ -1,43 +1,35 @@
 import React from 'react';
-import clsx from 'clsx';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 
-const useStyles = makeStyles({
-    list: {
-      width: 250,
-    },
-    fullList: {
-      width: 'auto',
-    },
-  });
-  
-  export default function TemporaryDrawer() {
-    const classes = useStyles();
-    const [state, setState] = React.useState({
-      top: false,
-      left: false,
-      bottom: false,
-      right: false,
-    });}
+const useStyles = makeStyles((theme) => ({
+  heroContent: {
+      backgroundColor: theme.palette.background.paper,
+      // padding: theme.spacing(8, 0, 6),
+  },
+  heroButtons: {
+      marginTop: theme.spacing(4),
+  }
+}));
 
+const MetaData =(props)=>{
+  console.log(props);
+  const classes = useStyles();
 
-const MetaData = () =>{
-return(
-    <React.Fragment key={right}>
-    <Button onClick={toggleDrawer(anchor, true)}>"right"</Button>
-    <Drawer anchor="right" open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-      {list(anchor)}
-    </Drawer>
-  </React.Fragment>
-);
+    return (
+        <div className={classes.heroContent}>
+            <Typography  variant="h5" align="center" color="textSecondary" paragraph>
+                Category : {props.Category}
+            </Typography>
+            <Typography  variant="h5" align="center" color="textSecondary" paragraph>
+                Organisation : {props.Org}
+            </Typography>
+            <Typography  variant="h5" align="center" color="textSecondary" paragraph>
+                Status : {props.Status}
+            </Typography>
+            <Typography  variant="h5" align="center" color="textSecondary" paragraph>
+                Date of Publish : {props.DOP}
+            </Typography>
+        </div>);
 }
 export default MetaData;
