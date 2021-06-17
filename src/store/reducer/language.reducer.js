@@ -1,15 +1,10 @@
-import {CHANGE_LANG} from '../action/story.actions';
+import {CHANGE_LANG} from '../action/language.actions';
 
-const initialState = {
-    lang:"en",
-};
+const initialState = "en";
 
 export default function (state = initialState, action) {
     if(action.type === CHANGE_LANG){
-        return {
-            ...state,
-            lang:state.lang==="en"?"hi":"en"
-        }
+        return state==="en"?"hi":"en"
     }
     else return state;
 }

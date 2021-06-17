@@ -6,7 +6,8 @@ import lang from './language.reducer'
 
 //call combine reducer function and pass all imported reducers as function in it, and then export that combined Reducer;
 const allReducers = combineReducers({
-    story,lang
+    story,
+    lang
 });
 
 const rootReducer = (state, action) => {

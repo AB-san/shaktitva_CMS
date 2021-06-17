@@ -5,6 +5,13 @@ import Heading from './Heading/index'
 import TextBox from './TextBox/index'
 import MediaComponent from './MediaComponent/index'
 import MetaData from './MetaData/index';
+import LanguageToggle from './LanguageToggle';
 export {
-        Drawer, StoryCard, Heading, TextBox, MediaComponent, MetaData
+	Drawer, 
+	LanguageToggle,
+	StoryCard, 
+	Heading, 
+	TextBox, 
+	MediaComponent, 
+	MetaData
 }

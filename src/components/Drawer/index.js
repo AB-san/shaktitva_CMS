@@ -22,6 +22,9 @@ import MovieTwoToneIcon from '@material-ui/icons/MovieTwoTone';
 import ChangeHistoryOutlinedIcon from '@material-ui/icons/ChangeHistoryOutlined';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
 
+// custom components
+import {LanguageToggle} from '../index'
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -127,6 +130,7 @@ export default function MiniDrawer() {
               Shaktitva CMS
             </Typography>
           </Toolbar>
+          <LanguageToggle />
         </AppBar>
         <Drawer
           variant="permanent"
