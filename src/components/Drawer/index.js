@@ -1,26 +1,40 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
+
+//Material UI imports
+import {
+  makeStyles, 
+  useTheme,
+  Drawer,
+  AppBar,
+  Toolbar,
+  List,
+  CssBaseline,
+  Typography,
+  Divider,
+  IconButton,
+  ListItem,
+  ListItemText,
+  ListItemIcon } from '@material-ui/core';
+  // import{
+  //   MenuIcon,
+  //   ChevronLeftIcon,
+  //   ChevronRightIcon
+  // } from '@material-ui/icons';
+import HelpIcon from '@material-ui/icons/Help';
+import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import {Link} from 'react-router-dom';
+import SettingsIcon from '@material-ui/icons/Settings';
+import PeopleIcon from '@material-ui/icons/People';
 import MailIcon from '@material-ui/icons/Mail';
-// Random ICONS
-import MovieTwoToneIcon from '@material-ui/icons/MovieTwoTone';
 import ChangeHistoryOutlinedIcon from '@material-ui/icons/ChangeHistoryOutlined';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
+
+import {Link} from 'react-router-dom';
+
+import './styles.css'
 
 // custom components
 import {LanguageToggle} from '../index'
@@ -90,6 +104,11 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  LanguageToggle:{
+    display: "inline",
+    position: "absolute",
+    left: "0px"
+  }
 }));
 
 export default function MiniDrawer() {
@@ -130,7 +149,8 @@ export default function MiniDrawer() {
               Shaktitva CMS
             </Typography>
           </Toolbar>
-          <LanguageToggle />
+          <LanguageToggle className={LanguageToggle} 
+            />
         </AppBar>
         <Drawer
           variant="permanent"
@@ -154,7 +174,7 @@ export default function MiniDrawer() {
           <List>
             <ListItem button key = 'Story' component={Link} to="/story">
               <ListItemIcon>
-                <ChangeHistoryOutlinedIcon />
+                <FeaturedPlayListIcon/>
               </ListItemIcon>
               <ListItemText primary = 'Story' />
             </ListItem>
@@ -166,15 +186,27 @@ export default function MiniDrawer() {
             </ListItem>
             <ListItem button key = 'NGO' component={Link} to="/NGO">
               <ListItemIcon>
-                <MailIcon />
+                <HelpIcon />
               </ListItemIcon>
               <ListItemText primary = 'NGO' />
             </ListItem>
-            <ListItem button key = 'StarWars' component={Link} to="/SW">
-              <ListItemIcon >
-                <MovieTwoToneIcon />
+            <ListItem button key = 'Users' component={Link} to="/Users">
+              <ListItemIcon>
+                <PeopleIcon />
               </ListItemIcon>
-              <ListItemText primary = 'StarWarsAPI' />
+              <ListItemText primary = 'Users' />
+            </ListItem>
+            <ListItem button key = 'Mailing_List' component={Link} to="/MailingList">
+              <ListItemIcon>
+                <MailIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'Mailing List' />
+            </ListItem>
+            <ListItem button key = 'Configuration' component={Link} to="/Config">
+              <ListItemIcon>
+                <SettingsIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'Configuration' />
             </ListItem>
           </List>
         </Drawer>

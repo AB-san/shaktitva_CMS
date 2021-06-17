@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
 //Material-ui Components
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import {Typography , makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {

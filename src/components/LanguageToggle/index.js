@@ -11,10 +11,14 @@ const LanguageToggle = () => {
     const dispatch = useDispatch();
 
     return (
-        <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
-          <Button onClick ={()=>dispatch(changeLanguage.changeLang())}> English</Button>
-          <Button onClick ={()=>dispatch(changeLanguage.changeLang())} > हिंदी</Button>
-        </ButtonGroup>
+        // <ToggleButtonGroup exclusive variant="contained" color="primary" aria-label="contained primary button group">
+        //   <ToggleButton onClick ={()=>dispatch(changeLanguage.changeLang())}> English</ToggleButton>
+        //   <ToggleButton onClick ={()=>dispatch(changeLanguage.changeLang())} > हिंदी</ToggleButton>
+        // </ToggleButtonGroup>
+        <ButtonGroup exclusive variant="contained" color="primary" aria-label="contained primary button group">
+        <Button onClick ={()=>dispatch(changeLanguage.changeLang())}> English</Button>
+        <Button onClick ={()=>dispatch(changeLanguage.changeLang())} > हिंदी</Button>
+      </ButtonGroup>
     )
 }
 

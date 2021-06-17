@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useEffect } from 'react';
+import { Container, makeStyles } from '@material-ui/core';
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { getEnglishStories, getHindiStories } from '../../store/action/story.actions';
-import { 
-  TextBox, 
-  Heading, 
-  MediaComponent,
-  MetaData, 
-  LanguageToggle
+import {
+  TextBox,
+  Heading,
+  StoryMetaData
 } from '../../components/index'
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import SaveIcon from '@material-ui/icons/Save';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
@@ -32,10 +30,9 @@ const useStyles = makeStyles((theme) => ({
 
 const storyDetailed = () => {
 
-  const language= useSelector(state=>state.lang);
-
+  const language = useSelector(state => state.lang);
   const dispatch = useDispatch();
-  const { loadingStories } = useSelector(state => state.story);
+
   const stories = language === "hi" ? useSelector(state => state.story.hi) : useSelector(state => state.story.en);
   useEffect(() => {
     language === "en" ? dispatch(getEnglishStories.request()) : dispatch(getHindiStories.request());
@@ -50,20 +47,43 @@ const storyDetailed = () => {
   if (specificStory[0] === undefined) {
     return <h1>Loading</h1>;
   }
-  const handleChange = (event) => {
-    // setLanguage(event.target.value);
-  };
+
   return (
     <div className={classes.heroContent}>
       <Container>
         <Heading text={specificStory[0].heading} />
-        <LanguageToggle />
-    <MetaData 
-    Category={specificStory[0].category_id} 
-    Org={specificStory[0].organisation_id} 
-    DOP={specificStory[0].date_to_publish} 
-    Status={specificStory[0].status}
-    />
+        <ButtonGroup>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<EditIcon />}
+          >
+            Edit
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<SaveIcon />}
+          >
+            Save as Draft
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<DeleteIcon />}
+          >
+            Delete
+          </Button>
+        </ButtonGroup>
+        <StoryMetaData
+          Category={specificStory[0].category_id}
+          Org={specificStory[0].organisation_id}
+          DOP={specificStory[0].date_to_publish}
+          Status={specificStory[0].status}
+        />
         <TextBox text={specificStory[0].main_text} />
         <br />
         <TextBox text={specificStory[0].flash_card} />

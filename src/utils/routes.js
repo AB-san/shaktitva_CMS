@@ -8,7 +8,10 @@ import {
     Story,
     NGO,
     Legal,
-    StoryDetailed
+    StoryDetailed,
+    Users,
+    MailingList,
+    Config
   } from '../pages/index';
   
 const Routes = () => {
@@ -19,16 +22,23 @@ const Routes = () => {
             <Route path ="/Story" exact>
                 <Story />
             </Route>
-            
             <Route path ="/NGO">
                 <NGO />
             </Route>
-            
             <Route path ="/Legal">
                 <Legal />
             </Route>
             <Route path ="/Story/:StoryID" exact>
                 <StoryDetailed />
+            </Route>
+            <Route path ="/Users">
+                <Users />
+            </Route>
+            <Route path ="/MailingList">
+                <MailingList />
+            </Route>
+            <Route path ="/Config">
+                <Users />
             </Route>
         </BrowserRouter>
     )
