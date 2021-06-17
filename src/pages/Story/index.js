@@ -10,7 +10,6 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
 
 import {StoryCard,Heading} from '../../components/index'
-//TODO: ADD Story ID route
 import { Link } from 'react-router-dom';
 import { getEnglishStories,getHindiStories } from '../../store/action/story.actions';
 
@@ -46,16 +45,15 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Stories = () => {
-const [language, setlanguage] = useState("hi")
   const dispatch = useDispatch();
-  const { loadingStories } = useSelector(state => state.story);
-  const stories = language==="hi"?useSelector(state=>state.story.hi):useSelector(state=>state.story.en);
+  const { loadingStories,lang } = useSelector(state => state.story);
+  const stories = lang==="hi"?useSelector(state=>state.story.hi):useSelector(state=>state.story.en);
 
   
   useEffect(() => {
-    language === "en"?dispatch(getEnglishStories.request()):dispatch(getHindiStories.request());
-  }, [language])
-  
+    lang === "en"?dispatch(getEnglishStories.request()):dispatch(getHindiStories.request());
+  }, [lang])
+  // console.log(dispatch("CHANGE_LANG"));
 
   
   const classes = useStyles();
@@ -67,8 +65,8 @@ const [language, setlanguage] = useState("hi")
           {loadingStories === false && stories.length > 0 ? `Stories loaded ${stories.length}` : "Loading..."}
         </Typography>
         <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
-          <Button onClick ={()=>setlanguage("en")}> English</Button>
-          <Button onClick ={()=>setlanguage("hi")} > हिंदी</Button>
+          <Button onClick ={dispatch("CHANGE_LANG")}> English</Button>
+          <Button onClick ={dispatch("CHANGE_LANG")} > हिंदी</Button>
         </ButtonGroup>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
