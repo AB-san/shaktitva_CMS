@@ -4,15 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
 
+import {StoryCard,Heading} from '../../components/index'
 //TODO: ADD Story ID route
 import { Link } from 'react-router-dom';
 import { getEnglishStories,getHindiStories } from '../../store/action/story.actions';
@@ -67,13 +64,12 @@ const [language, setlanguage] = useState("hi")
   // },[language]);
 
 
+  
   const classes = useStyles();
   return (
     <div className={classes.heroContent}>
       <Container >
-        <Typography component="h1" variant="h2" align="center" style={{color:"#fff"}} gutterBottom>
-          Stories Page
-        </Typography>
+        <Heading text="Stories Page" />
         <Typography variant="h5" align="center" style={{color:"#fff"}} paragraph>
           {loadingStories === false && stories.length > 0 ? `Stories loaded ${stories.length}` : "Loading..."}
         </Typography>
@@ -86,40 +82,7 @@ const [language, setlanguage] = useState("hi")
           <Grid container spacing={4}>
             {stories.length > 0 && stories.map((story, index) => {
               return (
-                <Grid item key={index} xs={12} sm={6} md={4}>
-                  <Card className={classes.card}>
-                    <CardActionArea>
-                      <CardMedia
-                        component="img"
-                        alt="Heroes"
-                        height="140"
-                        image={story.images[0]}
-                        title="Heroes"
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                          {story.heading}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                          {story.flash_card}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                      <Button size="small" color="primary">
-                        Share
-                  </Button>
-                  <Link to ={`/story/${story.id}`}>
-                        Learn More
-                  </Link>
-                    </CardActions>
-                    {/* <AudioPlayer
-                      src={story.podcast_url}
-                      autoPlay={false}
-                    /> */}
-                  </Card>
-                </Grid>
-              )
+              <StoryCard index={index} story={story} />);
             })}
           </Grid>
         </Container>
