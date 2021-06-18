@@ -4,7 +4,7 @@ const initialState = "en";
 
 export default function (state = initialState, action) {
     if(action.type === CHANGE_LANG){
-        return state==="en"?"hi":"en"
+        return state=action.payload;
     }
     else return state;
 }

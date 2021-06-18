@@ -16,8 +16,8 @@ const LanguageToggle = () => {
         //   <ToggleButton onClick ={()=>dispatch(changeLanguage.changeLang())} > हिंदी</ToggleButton>
         // </ToggleButtonGroup>
         <ButtonGroup exclusive variant="contained" color="primary" aria-label="contained primary button group">
-        <Button onClick ={()=>dispatch(changeLanguage.changeLang())}> English</Button>
-        <Button onClick ={()=>dispatch(changeLanguage.changeLang())} > हिंदी</Button>
+        <Button onClick ={()=>{dispatch(changeLanguage.changeLang("en"))}}> English</Button>
+        <Button onClick ={()=>{dispatch(changeLanguage.changeLang("hi"))}}> हिंदी</Button>
       </ButtonGroup>
     )
 }
