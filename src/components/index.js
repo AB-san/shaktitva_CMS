@@ -5,6 +5,7 @@ import TextBox from './TextBox/index'
 import MediaComponent from './MediaComponent/index'
 import StoryMetaData from './StoryMetaData/index';
 import LanguageToggle from './LanguageToggle';
+import NgoCard from './NgoCard'
 export {
 	Drawer, 
 	LanguageToggle,
@@ -12,5 +13,6 @@ export {
 	Heading, 
 	TextBox, 
 	MediaComponent, 
-	StoryMetaData
+	StoryMetaData,
+	NgoCard
 }

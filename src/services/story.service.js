@@ -10,3 +10,4 @@ export const StoryApi = {
         return axiosInstance.get("/hi/stories/all/");
     }
 }
+
