@@ -53,10 +53,7 @@ const Legal = () =>{
     const legalDetails = lang === "hi" ? useSelector(state => state.legal.legal_hi) : useSelector(state => state.legal.legal_en);
   
     const classes = useStyles();
-  
-    if (legalDetails === undefined) {
-      return <h1>Loading</h1>;
-    }
+    
     return(
     <div className={classes.heroContent}>
       <Container >

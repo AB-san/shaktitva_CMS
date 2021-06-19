@@ -13,10 +13,6 @@ const useStyles = makeStyles((theme) => ({
     heroButtons: {
       marginTop: theme.spacing(4),
     },
-    typography:{
-      backgroundColor:"#242B2E",
-      color:"#fff"
-    }
   }));
 
 const Heading = (props) =>{

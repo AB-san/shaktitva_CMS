@@ -10,7 +10,9 @@ import {
     NGO,
     NgoDetailed,
     Legal,
-    LegalDetailed,
+    LegalLaw,
+    LegalMisuse,
+    LegalExample,
     Users,
     MailingList,
     Config,
@@ -37,7 +39,13 @@ const Routes = () => {
                 <Legal />
             </Route>
             <Route path ="/legal/:LegalID">
-                <LegalDetailed />
+                <LegalLaw />
+            </Route>
+            <Route path ="/legal/misuse/:LegalID">
+                <LegalMisuse />
+            </Route>
+            <Route path ="/legal/example/:LegalID">
+                <LegalExample />
             </Route>
             <Route path ="/users">
                 <Users />

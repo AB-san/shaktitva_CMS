@@ -12,6 +12,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 
+import {TextBox} from '../index' 
 //React h5 Audio Player
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroContent: {
     backgroundColor: "#242B2E",
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(18, 10, 6),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -53,6 +54,8 @@ const LegalCard = (props) => {
             <Typography gutterBottom variant="h5" component="h2">
               {details.heading}
             </Typography>
+            <br />
+            <TextBox text={details.category}/>
             <Typography variant="body2" color="textSecondary" component="p">
               {details.brief_text}
             </Typography>
@@ -62,9 +65,16 @@ const LegalCard = (props) => {
           <Button size="small" color="primary">
             Share
           </Button>
+
+          {details.misuse_text!=null&&details.misuse_text.length>0&&<Link to={`/legal/misuse/${details._id}`}>
+            Misuse
+          </Link>}
           <Link to={`/legal/${details._id}`}>
-            Learn More
+            Law
           </Link>
+          {details.misuse_text!=null&&details.example_text.length>0&&<Link to={`/legal/example/${details._id}`}>
+            Example
+          </Link>}
           <AudioPlayer
           style={{display:"block"}}
           src={details.podcast_url}
