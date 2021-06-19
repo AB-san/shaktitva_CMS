@@ -44,7 +44,7 @@ const NgoDetailed = () => {
     <div className={classes.heroContent}>
       <Container>
         <Heading text={specificNgo.name} />
-        <EditButtonGroup status="2"/>
+        <EditButtonGroup status="4"/>
         <TextBox text={specificNgo.description} />
         <br />
         <TextBox text={specificNgo.address} />
@@ -59,7 +59,8 @@ const NgoDetailed = () => {
         <br />
         {/* <Date date={specificNgo.createdAt} />
         <br />
-        <Date date={specificNgo.updatedAt} /> */}
+        <Date date={specificNgo.updatedAt} /> 
+        <br />*/}
       </Container>
     </div>
     );

@@ -70,6 +70,7 @@ const NGO = () => {
   useEffect(() => {
     lang === "en" ? dispatch(getEnglishNgoDetails.request()) : dispatch(getHindiNgoDetails.request());
   }, [lang])
+  
   console.log(ngoDetails)
 
   const classes = useStyles();

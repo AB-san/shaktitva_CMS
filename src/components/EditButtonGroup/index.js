@@ -16,24 +16,31 @@ const EditButtonGroup = (props) => {
             </Button>
             {props.status === "0" && <Button
                 variant="contained"
-                color="primary"
+                color="yellow"
                 startIcon={<SaveIcon />}
             >
                 Publish
             </Button>}
             {props.status === "1" && <Button
                 variant="contained"
-                color="primary"
+                color="yellow"
                 startIcon={<SaveIcon />}
             >
                 UnPublish
             </Button>}
             {props.status === "2" && <Button
                 variant="contained"
-                color="primary"
+                color="yellow"
                 startIcon={<SaveIcon />}
             >
                 Save as Draft
+            </Button>}
+            {props.status === "4" && <Button
+                variant="contained"
+                color="yellow"
+                startIcon={<SaveIcon />}
+            >
+                PlaceHolder
             </Button>}
             <Button
                 variant="contained"

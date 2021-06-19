@@ -7,6 +7,7 @@ import StoryMetaData from './StoryMetaData/index';
 import LanguageToggle from './LanguageToggle';
 import NgoCard from './NgoCard'
 import EditButtonGroup from './EditButtonGroup'
+import LegalCard from './LegalCard'
 export {
 	Drawer,
 	LanguageToggle,
@@ -16,5 +17,6 @@ export {
 	MediaComponent, 
 	StoryMetaData,
 	NgoCard,
-	EditButtonGroup
+	EditButtonGroup,
+	LegalCard
 };
