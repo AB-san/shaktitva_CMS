@@ -6,12 +6,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import {
     Story,
-    NGO,
-    Legal,
     StoryDetailed,
+    NGO,
+    NgoDetailed,
+    Legal,
     Users,
     MailingList,
-    Config
+    Config,
   } from '../pages/index';
   
 const Routes = () => {
@@ -19,25 +20,28 @@ const Routes = () => {
         <BrowserRouter>
             <CssBaseline />
             <Drawer />
-            <Route path ="/Story" exact>
+            <Route path ="/story" exact>
                 <Story />
             </Route>
-            <Route path ="/NGO">
-                <NGO />
-            </Route>
-            <Route path ="/Legal">
-                <Legal />
-            </Route>
-            <Route path ="/Story/:StoryID" exact>
+            <Route path ="/story/:StoryID">
                 <StoryDetailed />
             </Route>
-            <Route path ="/Users">
+            <Route path ="/ngo" exact>
+                <NGO />
+            </Route>
+            <Route path ="/ngo/:NgoID">
+                <NgoDetailed />
+            </Route>
+            <Route path ="/legal">
+                <Legal />
+            </Route>
+            <Route path ="/users">
                 <Users />
             </Route>
-            <Route path ="/MailingList">
+            <Route path ="/mailinglist">
                 <MailingList />
             </Route>
-            <Route path ="/Config">
+            <Route path ="/config">
                 <Users />
             </Route>
         </BrowserRouter>

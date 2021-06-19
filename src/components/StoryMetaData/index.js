@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography, makeStyles } from '@material-ui/core';
+import Date from '../Date/index';
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -23,9 +24,7 @@ const MetaData = (props) => {
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
                 Status : {props.Status}
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                Date of Publish : {props.DOP}
-            </Typography>
+            <Date date={props.DOP} />
         </div>);
 }
 export default MetaData;

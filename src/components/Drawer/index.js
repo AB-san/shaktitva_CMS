@@ -29,7 +29,6 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PeopleIcon from '@material-ui/icons/People';
 import MailIcon from '@material-ui/icons/Mail';
-import ChangeHistoryOutlinedIcon from '@material-ui/icons/ChangeHistoryOutlined';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
 
 import {Link} from 'react-router-dom';
@@ -178,31 +177,31 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary = 'Story' />
             </ListItem>
-            <ListItem button key = 'Legal' component={Link} to="/Legal">
+            <ListItem button key = 'Legal' component={Link} to="/legal">
               <ListItemIcon>
                 <GavelOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary = 'Legal' />
             </ListItem>
-            <ListItem button key = 'NGO' component={Link} to="/NGO">
+            <ListItem button key = 'NGO' component={Link} to="/ngo">
               <ListItemIcon>
                 <HelpIcon />
               </ListItemIcon>
               <ListItemText primary = 'NGO' />
             </ListItem>
-            <ListItem button key = 'Users' component={Link} to="/Users">
+            <ListItem button key = 'Users' component={Link} to="/users">
               <ListItemIcon>
                 <PeopleIcon />
               </ListItemIcon>
               <ListItemText primary = 'Users' />
             </ListItem>
-            <ListItem button key = 'Mailing_List' component={Link} to="/MailingList">
+            <ListItem button key = 'Mailing_List' component={Link} to="/mailinglist">
               <ListItemIcon>
                 <MailIcon />
               </ListItemIcon>
               <ListItemText primary = 'Mailing List' />
             </ListItem>
-            <ListItem button key = 'Configuration' component={Link} to="/Config">
+            <ListItem button key = 'Configuration' component={Link} to="/config">
               <ListItemIcon>
                 <SettingsIcon />
               </ListItemIcon>

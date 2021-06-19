@@ -61,8 +61,7 @@ const Stories = () => {
         <Typography variant="h5" align="center" style={{ color: "#fff" }} paragraph>
           {loadingStories === false && stories.length > 0 ? `Stories loaded ${stories.length}` : "Loading..."}
         </Typography>
-
-
+        
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>

@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NgoCard = (props) => {
   const details = props.details;
+  // console.log(details)
   const classes = useStyles();
   return (
     <Grid item key={props.index} md={12}>
@@ -58,12 +59,9 @@ const NgoCard = (props) => {
           <Button size="small" color="primary">
             Share
           </Button>
-          <Button size="small" color="primary">
+          <Link to={`/ngo/${details._id}`}>
             Learn More
-          </Button>
-          {/* <Link to={`/story/${story.id}`}>
-            Learn More
-          </Link> */}
+          </Link>
         </CardActions>
       </Card>
     </Grid>

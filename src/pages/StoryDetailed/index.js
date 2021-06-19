@@ -6,13 +6,10 @@ import { getEnglishStories, getHindiStories } from '../../store/action/story.act
 import {
   TextBox,
   Heading,
-  StoryMetaData
+  StoryMetaData,
+  EditButtonGroup
 } from '../../components/index'
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
-import SaveIcon from '@material-ui/icons/Save';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
+
 
 //React h5 Audio Player
 import AudioPlayer from 'react-h5-audio-player';
@@ -52,32 +49,7 @@ const storyDetailed = () => {
     <div className={classes.heroContent}>
       <Container>
         <Heading text={specificStory[0].heading} />
-        <ButtonGroup>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            startIcon={<EditIcon />}
-          >
-            Edit
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            startIcon={<SaveIcon />}
-          >
-            Save as Draft
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            startIcon={<DeleteIcon />}
-          >
-            Delete
-          </Button>
-        </ButtonGroup>
+        <EditButtonGroup status={specificStory[0].status} />
         <StoryMetaData
           Category={specificStory[0].category_id}
           Org={specificStory[0].organisation_id}

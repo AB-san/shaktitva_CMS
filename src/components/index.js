@@ -6,13 +6,15 @@ import MediaComponent from './MediaComponent/index'
 import StoryMetaData from './StoryMetaData/index';
 import LanguageToggle from './LanguageToggle';
 import NgoCard from './NgoCard'
+import EditButtonGroup from './EditButtonGroup'
 export {
-	Drawer, 
+	Drawer,
 	LanguageToggle,
 	StoryCard, 
 	Heading, 
 	TextBox, 
 	MediaComponent, 
 	StoryMetaData,
-	NgoCard
-}
+	NgoCard,
+	EditButtonGroup
+};
