@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+
 //Material-ui Components
 import {
     Container,
@@ -20,13 +20,9 @@ import {
     root: {
       maxWidth: '100vw',
     },
-    margin: {
-        margin: theme.spacing(1),
-    },
     heroContent: {
       backgroundColor: "#242B2E",
       padding: theme.spacing(20, 8, 6),
-    //   margin: theme.spacing(0,8),
     },
     heroButtons: {
       marginTop: theme.spacing(4),
@@ -36,7 +32,8 @@ import {
         display:'block',
         width: '25ch',
       }
-  }));
+  }
+  ));
 
   const SignIn = () =>{
       const classes = useStyles();
