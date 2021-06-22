@@ -15,6 +15,8 @@ import {
     LegalExample,
     Users,
     MailingList,
+    SignUp,
+    SignIn,
     Config,
   } from '../pages/index';
   
@@ -23,6 +25,12 @@ const Routes = () => {
         <HashRouter>
             <CssBaseline />
             <Drawer />
+            <Route path ="/signup">
+                <SignUp />
+            </Route>
+            <Route path ="/signin">
+                <SignIn />
+            </Route>
             <Route path ="/story" exact>
                 <Story />
             </Route>
@@ -54,6 +62,15 @@ const Routes = () => {
                 <MailingList />
             </Route>
             <Route path ="/config">
+                <Users />
+            </Route>
+            <Route path ="/category">
+                <Users />
+            </Route>
+            <Route path ="/state">
+                <Users />
+            </Route>
+            <Route path ="/defaultprofileimg">
                 <Users />
             </Route>
         </HashRouter>

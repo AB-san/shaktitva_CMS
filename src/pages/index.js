@@ -8,8 +8,11 @@ import MailingList from './MailingList/';
 import LegalLaw from './LegalLaw';
 import LegalExample from './LegalExample';
 import LegalMisuse from './LegalMisuse';
-
+import SignUp from './SignUp';
+import SignIn from './SignIn'
 export {
+    SignUp,
+    SignIn,
     Story,
     StoryDetailed,
     Legal,
