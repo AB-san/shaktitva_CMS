@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, makeStyles,Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 //actions
@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
     <TextBox text={legalStory.example_text}/>
     {/* <Date date={legalStory.createdAt}/>
     <Date date={legalStory.updatedAt}/> */}
-    <Typography gutterBottom variant="h5" component="h2" style={{color:"#fff"}}>Tell Me More</Typography>
     <AudioPlayer
           style={{display:"block"}}
           src={legalStory.example_podcast}
