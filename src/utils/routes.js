@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Route,BrowserRouter} from 'react-router-dom';
+import {Route,HashRouter} from 'react-router-dom';
 import { Drawer } from '../components/index';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -20,7 +20,7 @@ import {
   
 const Routes = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <CssBaseline />
             <Drawer />
             <Route path ="/story" exact>
@@ -56,7 +56,7 @@ const Routes = () => {
             <Route path ="/config">
                 <Users />
             </Route>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

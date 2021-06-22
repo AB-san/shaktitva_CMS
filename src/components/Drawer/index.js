@@ -16,11 +16,10 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon } from '@material-ui/core';
-  // import{
-  //   MenuIcon,
-  //   ChevronLeftIcon,
-  //   ChevronRightIcon
-  // } from '@material-ui/icons';
+
+
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 import HelpIcon from '@material-ui/icons/Help';
 import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -30,6 +29,8 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import PeopleIcon from '@material-ui/icons/People';
 import MailIcon from '@material-ui/icons/Mail';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
+import CategoryIcon from '@material-ui/icons/Category';
+
 
 import {Link} from 'react-router-dom';
 
@@ -144,7 +145,7 @@ export default function MiniDrawer() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap>
+            <Typography variant="h6" noWrap display='inline'>
               Shaktitva CMS
             </Typography>
           </Toolbar>
@@ -171,6 +172,18 @@ export default function MiniDrawer() {
           </div>
           <Divider />
           <List>
+          <ListItem button key = 'SignIn' component={Link} to="/signin">
+              <ListItemIcon>
+              <PeopleIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'Sign In' />
+            </ListItem>
+            <ListItem button key = 'SignUp' component={Link} to="/signup">
+              <ListItemIcon>
+              <PeopleIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'Sign Up' />
+            </ListItem>
             <ListItem button key = 'Story' component={Link} to="/story">
               <ListItemIcon>
                 <FeaturedPlayListIcon/>
@@ -206,6 +219,24 @@ export default function MiniDrawer() {
                 <SettingsIcon />
               </ListItemIcon>
               <ListItemText primary = 'Configuration' />
+            </ListItem>
+            <ListItem button key = 'Category' component={Link} to="/category">
+              <ListItemIcon>
+                <CategoryIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'Category' />
+            </ListItem>
+            <ListItem button key = 'State' component={Link} to="/state">
+              <ListItemIcon>
+              <LocationOnIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'State' />
+            </ListItem>
+            <ListItem button key = 'DefaultProfileImage' component={Link} to="/defaultprofile">
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary = 'DefaultProfileImage' />
             </ListItem>
           </List>
         </Drawer>
