@@ -145,7 +145,7 @@ export default function MiniDrawer() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap display='inline'>
+            <Typography variant="h6" noWrap display='inline' >
               Shaktitva CMS
             </Typography>
           </Toolbar>
@@ -226,11 +226,11 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary = 'Category' />
             </ListItem>
-            <ListItem button key = 'State' component={Link} to="/state">
+            <ListItem button key = 'States' component={Link} to="/states">
               <ListItemIcon>
               <LocationOnIcon />
               </ListItemIcon>
-              <ListItemText primary = 'State' />
+              <ListItemText primary = 'States' />
             </ListItem>
             <ListItem button key = 'DefaultProfileImage' component={Link} to="/defaultprofileimg">
               <ListItemIcon>

@@ -5,6 +5,8 @@ import { Drawer } from '../components/index';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import {
+    SignUp,
+    SignIn,
     Story,
     StoryDetailed,
     NGO,
@@ -15,9 +17,9 @@ import {
     LegalExample,
     Users,
     MailingList,
-    SignUp,
-    SignIn,
     Config,
+    Category,
+    State,
   } from '../pages/index';
   
 const Routes = () => {
@@ -65,10 +67,10 @@ const Routes = () => {
                 <Users />
             </Route>
             <Route path ="/category">
-                <Users />
+                <Category />
             </Route>
-            <Route path ="/state">
-                <Users />
+            <Route path ="/states">
+                <State />
             </Route>
             <Route path ="/defaultprofileimg">
                 <Users />

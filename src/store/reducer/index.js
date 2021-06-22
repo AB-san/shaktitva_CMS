@@ -2,9 +2,11 @@ import { combineReducers } from 'redux';
 
 //import reducers here
 import story from './story.reducer';
-import lang from './language.reducer'
-import legal from './legal.reducer'
-import NGO from './NGO.reducer'
+import NGO from './NGO.reducer';
+import legal from './legal.reducer';
+import category from './category.reducer';
+import lang from './language.reducer';
+import states from './state.reducer'
 
 //call combine reducer function and pass all imported reducers as function in it, and then export that combined Reducer;
 const allReducers = combineReducers({
@@ -12,6 +14,8 @@ const allReducers = combineReducers({
     NGO,
     legal,
     lang,
+    category,
+    states,
 });
 
 const rootReducer = (state, action) => {

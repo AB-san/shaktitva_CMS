@@ -32,8 +32,8 @@ import {
     textField: {
         display:'block',
         width: '25ch',
-        margin: theme.spacing(5,0,0),
-        
+        margin: theme.spacing(5,0,0)
+
       }
   }
   ));

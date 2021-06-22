@@ -1,15 +1,17 @@
+import SignUp from './SignUp';
+import SignIn from './SignIn';
 import Story from './Story/';
 import Legal from './Legal/';
 import StoryDetailed from './StoryDetailed/';
 import NGO from './NGO/';
 import NgoDetailed from './NgoDetailed/';
-import Users from './Users/';
-import MailingList from './MailingList/';
 import LegalLaw from './LegalLaw';
 import LegalExample from './LegalExample';
 import LegalMisuse from './LegalMisuse';
-import SignUp from './SignUp';
-import SignIn from './SignIn'
+import Users from './Users/';
+import MailingList from './MailingList';
+import Category from './Category'
+import State from './State'
 export {
     SignUp,
     SignIn,
@@ -23,4 +25,6 @@ export {
     NgoDetailed,
     Users,
     MailingList,
+    Category,
+    State,
 }
