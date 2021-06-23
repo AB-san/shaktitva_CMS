@@ -8,6 +8,7 @@ import LanguageToggle from './LanguageToggle';
 import NgoCard from './NgoCard'
 import EditButtonGroup from './EditButtonGroup'
 import LegalCard from './LegalCard'
+import CRUDButtonGroup from './CrudButtonGroup'
 export {
 	Drawer,
 	LanguageToggle,
@@ -18,5 +19,6 @@ export {
 	StoryMetaData,
 	NgoCard,
 	EditButtonGroup,
-	LegalCard
+	LegalCard,
+	CRUDButtonGroup
 };

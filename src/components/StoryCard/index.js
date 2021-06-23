@@ -55,11 +55,8 @@ const StoryCard = (props) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
           <Link to={`/story/${story.id}`}>
-            Learn More
+            View More
           </Link>
         </CardActions>
       </Card>

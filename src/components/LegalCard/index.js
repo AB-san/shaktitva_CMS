@@ -62,18 +62,15 @@ const LegalCard = (props) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-
+          
           {details.misuse_text!=null&&details.misuse_text.length>0&&<Link to={`/legal/misuse/${details._id}`}>
-            Misuse
+            View Misuse
           </Link>}
           <Link to={`/legal/${details._id}`}>
-            Law
+            View Detailed
           </Link>
           {details.misuse_text!=null&&details.example_text.length>0&&<Link to={`/legal/example/${details._id}`}>
-            Example
+            View Example
           </Link>}
           <AudioPlayer
           style={{display:"block"}}

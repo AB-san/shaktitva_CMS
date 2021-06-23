@@ -8,8 +8,8 @@ import englishLegalSaga from './legal.english.saga';
 import hindiLegalSaga from './legal.hindi.saga';
 import storyCategorySaga from './category.story.saga';
 import legalCategorySaga from './category.legal.saga'
-import englishStateSaga from './state.english.saga';
-import hindiStateSaga from './state.hindi.saga';
+import englishStatesSaga from './states.english.saga';
+import hindiStatesSaga from './states.hindi.saga';
 
 export default function* rootSaga(){
     yield all([
@@ -21,7 +21,7 @@ export default function* rootSaga(){
         hindiLegalSaga(),
         legalCategorySaga(),
         storyCategorySaga(),
-        englishStateSaga(),
-        hindiStateSaga(),
+        englishStatesSaga(),
+        hindiStatesSaga(),
     ])
 }

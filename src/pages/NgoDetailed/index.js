@@ -6,7 +6,6 @@ import { getEnglishNgoDetails, getHindiNgoDetails } from '../../store/action/NGO
 import {
     TextBox,
     Heading,
-    StoryMetaData,
     EditButtonGroup
   } from '../../components/index'
 const useStyles = makeStyles((theme) => ({

@@ -17,9 +17,8 @@ import {
     LegalExample,
     Users,
     MailingList,
-    Config,
     Category,
-    State,
+    States,
   } from '../pages/index';
   
 const Routes = () => {
@@ -70,7 +69,7 @@ const Routes = () => {
                 <Category />
             </Route>
             <Route path ="/states">
-                <State />
+                <States />
             </Route>
             <Route path ="/defaultprofileimg">
                 <Users />

@@ -11,7 +11,7 @@ import LegalMisuse from './LegalMisuse';
 import Users from './Users/';
 import MailingList from './MailingList';
 import Category from './Category'
-import State from './State'
+import States from './States'
 export {
     SignUp,
     SignIn,
@@ -26,5 +26,5 @@ export {
     Users,
     MailingList,
     Category,
-    State,
+    States,
 }
