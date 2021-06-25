@@ -6,9 +6,11 @@ import {
     Container,
     makeStyles,
     Paper,
+    Button
   } from '@material-ui/core';
+  import AddCircleIcon from '@material-ui/icons/AddCircle';
 
-  import { CRUDButtonGroup,Heading } from '../../components/index'
+  import { Heading } from '../../components/index'
   import { getStoryCategory, getLegalCategory } from '../../store/action/category.actions';
 
 
@@ -18,14 +20,14 @@ import {
     },
     card:{
       width: theme.spacing(30),
-      height: theme.spacing(25),
+      height: theme.spacing(30),
     },
     heroContent: {
       backgroundColor: "#242B2E",
       padding: theme.spacing(18, 0, 6),
     },
     heroButtons: {
-      marginTop: theme.spacing(4),
+      margin: theme.spacing(4,1,0),
     },
     text: {
       padding:theme.spacing(3,2,3)
@@ -53,14 +55,17 @@ import {
         <Heading text="Categories" />
         
         <Heading text="Story" />
-        <CRUDButtonGroup />
         <Typography variant="h5" align="center" style={{ color: "#fff" }} paragraph>
           {loadingCategory === false && storyCategory.length > 0 ? `Story Category loaded ${storyCategory.length}` : "Loading..."}
         </Typography>
-        {storyCategory.length > 0 && storyCategory.map((category, index) => {
-              return (
+        <Paper elevation = {2} className={classes.card}>
+          <AddCircleIcon color="primary" style={{ fontSize: 240 }} />
+        </Paper>
+        <br />
+          {storyCategory.length > 0 && storyCategory.map((category) => {
+            return (
                 <div>
-                {/* //TODO:MAKE THIS INTO A TABLE */}
+                
             <Paper elevation = {2} className={classes.card}>
             <div className={classes.text}>
             <Typography  variant="body2" color="textSecondary" component="p">
@@ -82,6 +87,10 @@ import {
             <Typography variant="body2" color="textSecondary"  component="p">
               {category.updatedAt}
             </Typography>
+
+            <Button variant="contained" className={classes.heroButtons} color="primary"> Edit</Button>
+            <Button variant="contained" className={classes.heroButtons} color="secondary"> Delete </Button>
+
             </div>
             </Paper>
             <br />
@@ -90,15 +99,17 @@ import {
         })}
       
         <Heading text="Legal" />
-        <CRUDButtonGroup />
         <Typography variant="h5" align="center" style={{ color: "#fff" }} paragraph>
           {loadingCategory === false && legalCategory.length > 0 ? `Legal Category loaded ${legalCategory.length}` : "Loading..."}
         </Typography>
-        {legalCategory.length > 0 && legalCategory.map((category, index) => {
+        <Paper elevation = {2} className={classes.card}>
+          <AddCircleIcon color="primary" style={{ fontSize: 240 }} />
+        </Paper>
+        <br />
+        {legalCategory.length > 0 && legalCategory.map((category) => {
               return (
                 <div>
-                {/* //TODO:MAKE THIS INTO A TABLE */}
-                <Paper display="inline" elevation = {2} className={classes.card}>
+                <Paper display="inline" elevation = {20} className={classes.card}>
                 <div className={classes.text}>
             <Typography variant="body2" color="textSecondary"  component="p">
               {category._id}
@@ -119,6 +130,9 @@ import {
             <Typography variant="body2" color="textSecondary"  component="p">
               {category.updatedAt}
             </Typography>
+
+            <Button variant="contained" className={classes.heroButtons} color="primary"> Edit</Button>
+            <Button variant="contained" className={classes.heroButtons} color="secondary"> Delete </Button>
             </div>
             </Paper>
             <br />

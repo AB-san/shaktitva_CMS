@@ -19,6 +19,7 @@ import {
     MailingList,
     Category,
     States,
+    DefailtProfilePic,
   } from '../pages/index';
   
 const Routes = () => {
@@ -71,8 +72,8 @@ const Routes = () => {
             <Route path ="/states">
                 <States />
             </Route>
-            <Route path ="/defaultprofileimg">
-                <Users />
+            <Route path ="/defaultprofilepic">
+                <DefailtProfilePic />
             </Route>
         </HashRouter>
     )

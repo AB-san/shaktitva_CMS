@@ -7,6 +7,7 @@ import legal from './legal.reducer';
 import category from './category.reducer';
 import lang from './language.reducer';
 import states from './states.reducer'
+import profilePic from './profilePicture.reducer'
 
 //call combine reducer function and pass all imported reducers as function in it, and then export that combined Reducer;
 const allReducers = combineReducers({
@@ -16,6 +17,7 @@ const allReducers = combineReducers({
     lang,
     category,
     states,
+    profilePic,
 });
 
 const rootReducer = (state, action) => {

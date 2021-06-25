@@ -232,7 +232,7 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary = 'States' />
             </ListItem>
-            <ListItem button key = 'DefaultProfileImage' component={Link} to="/defaultprofileimg">
+            <ListItem button key = 'DefaultProfileImage' component={Link} to="/defaultprofilepic">
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>
