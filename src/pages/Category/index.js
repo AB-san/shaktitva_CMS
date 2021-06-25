@@ -6,7 +6,8 @@ import {
     Container,
     makeStyles,
     Paper,
-    Button
+    Button,
+    Grid
   } from '@material-ui/core';
   import AddCircleIcon from '@material-ui/icons/AddCircle';
 
@@ -19,7 +20,7 @@ import {
       maxWidth: '100vw',
     },
     card:{
-      width: theme.spacing(30),
+      minWidth: theme.spacing(30),
       height: theme.spacing(30),
     },
     heroContent: {
@@ -55,49 +56,51 @@ import {
         <Heading text="Categories" />
         
         <Heading text="Story" />
-        <Typography variant="h5" align="center" style={{ color: "#fff" }} paragraph>
+        <Typography variant="h3" align="center" style={{ color: "#fff" }} paragraph>
           {loadingCategory === false && storyCategory.length > 0 ? `Story Category loaded ${storyCategory.length}` : "Loading..."}
         </Typography>
-        <Paper elevation = {2} className={classes.card}>
-          <AddCircleIcon color="primary" style={{ fontSize: 240 }} />
-        </Paper>
-        <br />
+        <Grid container justify="center" alignItems="center" spacing="2">
+          <Grid item xs>
+            <Paper elevation={2} className={classes.card}>
+              <AddCircleIcon color="primary" style={{ fontSize: 240 }} />
+            </Paper>
+          </Grid>
+        
           {storyCategory.length > 0 && storyCategory.map((category) => {
             return (
-                <div>
+              <Grid item xs>    
+                <Paper elevation={2} className={classes.card}>
+                <div className={classes.text}>
+                <Typography  variant="body2" color="textSecondary" component="p">
+                  {category._id}
+                </Typography>
                 
-            <Paper elevation = {2} className={classes.card}>
-            <div className={classes.text}>
-            <Typography  variant="body2" color="textSecondary" component="p">
-              {category._id}
-            </Typography>
-            
-            <Typography variant="body2" color="textSecondary"  component="p">
-              {category.category_name.hi}
-            </Typography>
-            
-            <Typography variant="body2" color="textSecondary"  component="p">
-              {category.category_name.en}
-            </Typography>
-            
-            <Typography variant="body2" color="textSecondary"  component="p">
-              {category.createdAt}
-            </Typography>
-            
-            <Typography variant="body2" color="textSecondary"  component="p">
-              {category.updatedAt}
-            </Typography>
+                <Typography variant="body2" color="textSecondary"  component="p">
+                  {category.category_name.hi}
+                </Typography>
+                
+                <Typography variant="body2" color="textSecondary"  component="p">
+                  {category.category_name.en}
+                </Typography>
+                
+                <Typography variant="body2" color="textSecondary"  component="p">
+                  {category.createdAt}
+                </Typography>
+                
+                <Typography variant="body2" color="textSecondary"  component="p">
+                  {category.updatedAt}
+                </Typography>
 
-            <Button variant="contained" className={classes.heroButtons} color="primary"> Edit</Button>
-            <Button variant="contained" className={classes.heroButtons} color="secondary"> Delete </Button>
+                <Button variant="contained" className={classes.heroButtons} color="primary"> Edit</Button>
+                <Button variant="contained" className={classes.heroButtons} color="secondary"> Delete </Button>
 
-            </div>
-            </Paper>
-            <br />
-            </div>
+                </div>
+                </Paper>
+                
+              </Grid>
               );
         })}
-      
+      </Grid>
         <Heading text="Legal" />
         <Typography variant="h5" align="center" style={{ color: "#fff" }} paragraph>
           {loadingCategory === false && legalCategory.length > 0 ? `Legal Category loaded ${legalCategory.length}` : "Loading..."}

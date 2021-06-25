@@ -10,7 +10,8 @@ import {
     InputAdornment,
     IconButton,
     Button,
-    TextField
+    TextField,
+    Grid
   } from '@material-ui/core';
   import Visibility from '@material-ui/icons/Visibility';
   import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -61,34 +62,40 @@ import {
     <div className={classes.heroContent}>
       <Container >
         <Heading text="Sign Up" />
-        <TextField
-          id="margin-none"
-          placeholder="Your Full name"
-          className={classes.textField}
-        />
-        <TextField
-          id="margin-none"
-          placeholder="Your Email Id"
-          className={classes.textField}
-        />
-        <TextField
-          id="margin-none"
-          placeholder="Your Phone number"
-          className={classes.textField}
-        />
-        <FormControl className={ classes.textField }>
-          <Input
-            id="standard-adornment-weight"
-            placeholder="Username"
-            value={values.weight}
-            onChange={handleChange('weight')}
-            aria-describedby="standard-weight-helper-text"
-            inputProps={{
-              'aria-label': 'weight',
-            }}
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <TextField
+            id="margin-none"
+            placeholder="Your Full name"
+            className={classes.textField}
           />
-        </FormControl>
-        <FormControl className={ classes.textField} >
+          <TextField
+            id="margin-none"
+            placeholder="Your Email Id"
+            className={classes.textField}
+          />
+          <TextField
+            id="margin-none"
+            placeholder="Your Phone number"
+            className={classes.textField}
+          />
+          <FormControl className={ classes.textField }>
+            <Input
+              id="standard-adornment-weight"
+              placeholder="Username"
+              value={values.weight}
+              onChange={handleChange('weight')}
+              aria-describedby="standard-weight-helper-text"
+              inputProps={{
+                'aria-label': 'weight',
+              }}
+            />
+          </FormControl>
+          <FormControl className={ classes.textField} >
           <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
           <Input
             id="standard-adornment-password"
@@ -109,6 +116,8 @@ import {
           />
           </FormControl>
           <Button className={classes.heroButtons} variant="contained">Default</Button>
+        </Grid>
+      
       </Container>
     </div>
      );

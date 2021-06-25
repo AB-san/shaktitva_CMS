@@ -15,7 +15,10 @@ import {
   IconButton,
   ListItem,
   ListItemText,
-  ListItemIcon } from '@material-ui/core';
+  ListItemIcon,
+  Container, 
+  Grid
+} from '@material-ui/core';
 
 
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
@@ -37,7 +40,10 @@ import {Link} from 'react-router-dom';
 import './styles.css'
 
 // custom components
-import {LanguageToggle} from '../index'
+import {
+  LanguageToggle,
+  ProfileIcon
+} from '../index'
 
 const drawerWidth = 240;
 
@@ -148,9 +154,18 @@ export default function MiniDrawer() {
             <Typography variant="h6" noWrap display='inline' >
               Shaktitva CMS
             </Typography>
+            <Grid container style={{flexDirection: "row-reverse"}}>
+              
+              <Grid item>
+                <ProfileIcon />
+              </Grid>
+              <Grid item>
+                <LanguageToggle className={LanguageToggle} />
+              </Grid>
+            </Grid>
           </Toolbar>
-          <LanguageToggle className={LanguageToggle} 
-            />
+         
+            
         </AppBar>
         <Drawer
           variant="permanent"
@@ -172,6 +187,7 @@ export default function MiniDrawer() {
           </div>
           <Divider />
           <List>
+            {/* TODO: remove duplicacy of code!! */}
           <ListItem button key = 'SignIn' component={Link} to="/signin">
               <ListItemIcon>
               <PeopleIcon />

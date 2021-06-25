@@ -9,7 +9,8 @@ import {
     makeStyles,
     InputAdornment,
     IconButton,
-    Button
+    Button,
+    Grid
   } from '@material-ui/core';
   import Visibility from '@material-ui/icons/Visibility';
   import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -57,6 +58,12 @@ import {
     <div className={classes.heroContent}>
       <Container >
         <Heading text="Sign In" />
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
         <FormControl className={ classes.textField}>
           <Input
             id="standard-adornment-weight"
@@ -90,7 +97,8 @@ import {
             }
           />
           </FormControl>
-          <Button className={classes.heroButtons} variant="contained">Default</Button>
+        <Button className={classes.heroButtons} variant="contained">SignIn</Button>
+        </Grid>
       </Container>
     </div>
      );

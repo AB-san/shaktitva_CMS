@@ -9,10 +9,11 @@ import {
   CardContent,
   CardMedia,
   Button,
-  makeStyles
+  makeStyles,
+  Link
 } from '@material-ui/core';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,14 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     height: '100%',
+    minHeight: '200px',
     width: '100%',
+    marginBottom: '20px'
+  },
+  cardMedia: {
+    height: '100%',
+    minHeight: '200px',
+    objectFit: 'cover'
   },
   heroContent: {
     backgroundColor: "#242B2E",
@@ -35,32 +43,42 @@ const StoryCard = (props) => {
   const story = props.story;
   const classes = useStyles();
   return (
-    <Grid item key={props.index} md={12}>
+    
       <Card className={classes.card}>
-        <CardActionArea>
+        <Grid container key={props.index}>
+        {/* <CardActionArea> */}
+        <Grid item xs={6}>
           <CardMedia
-            component="img"
+            className={classes.cardMedia}
+            // component="img"
             alt="Heroes"
-            height="140"
             image={story.images[0]}
             title="Heroes"
           />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {story.heading}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {story.flash_card}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Link to={`/story/${story.id}`}>
-            View More
-          </Link>
-        </CardActions>
-      </Card>
-    </Grid>
+          </Grid>
+          <Grid item xs={6}>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {story.heading}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {story.flash_card}
+              </Typography>
+            </CardContent>
+          {/* </CardActionArea> */}
+          <CardActions>
+            {/* TODO: add style property: flex-direction: "reverse" */}
+            <Link 
+              component="button"
+              variant="button"
+              color="primary"
+              to={`/story/${story.id}`}>
+              View More
+            </Link>
+          </CardActions>
+        </Grid>
+      </Grid>
+    </Card>
 
   )
 }
