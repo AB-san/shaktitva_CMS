@@ -2,7 +2,7 @@ import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 const options = [
   'None',
@@ -43,7 +43,7 @@ const ProfileIcon = () => {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <MoreVertIcon />
+        <AccountBoxIcon />
       </IconButton>
       <Menu
         id="long-menu"

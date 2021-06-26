@@ -10,10 +10,9 @@ import {
   CardMedia,
   Button,
   makeStyles,
-  Link
 } from '@material-ui/core';
 
-// import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,13 +67,13 @@ const StoryCard = (props) => {
           {/* </CardActionArea> */}
           <CardActions>
             {/* TODO: add style property: flex-direction: "reverse" */}
-            <Link 
-              component="button"
-              variant="button"
-              color="primary"
-              to={`/story/${story.id}`}>
-              View More
-            </Link>
+            <Grid container style={{flexDirection: "row-reverse"}}>
+            <Grid item>
+            <Button color="primary" variant="outlined" component={RouterLink} to={`/story/${story.id}`}>
+            View More
+            </Button>
+            </Grid>
+            </Grid>
           </CardActions>
         </Grid>
       </Grid>

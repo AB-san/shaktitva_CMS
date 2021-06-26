@@ -11,7 +11,7 @@ import {
   import AddCircleIcon from '@material-ui/icons/AddCircle';
 
   import { Heading } from '../../components/index'
-  import { getProfilePicture } from '../../store/action/profilePic.actions';
+  import { getProfilePic } from '../../store/action/profilePic.actions';
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,13 +36,13 @@ import {
   const DefailtProfilePic = () =>{
 
     const dispatch = useDispatch();
-    const { loadingProfilePictures } = useSelector(state => state.profilePic);
+    const { loadingProfilePic } = useSelector(state => state.profilePic);
     useEffect(() => {
-        dispatch(getProfilePicture.request());
+        dispatch(getProfilePic.request());
       }, [])
 
-      const ProfilePictures = useSelector(state => state.profilePic.profilePictures);
-      console.log(ProfilePictures);
+      const ProfilePic = useSelector(state => state.profilePic.profilePic);
+      console.log(ProfilePic);
       const classes = useStyles();
       return(
           <div>

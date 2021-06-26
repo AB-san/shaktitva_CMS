@@ -1,19 +1,19 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import { ProfilePicApi } from "../../services/profilePic.service";
-import { getProfilePicture, GET_PROFILE_PICTURE } from "../action/profilePic.actions";
+import { getProfilePic, GET_PROFILE_PIC } from "../action/profilePic.actions";
 
 function* fetchProfilePic(){
     try{
         const {data} = yield call(ProfilePicApi.getProfilePic);
-        yield put(getProfilePicture.success(data))
+        yield put(getProfilePic.success(data))
     }catch(e){
-        yield put(getProfilePicture.failure(e))
+        yield put(getProfilePic.failure(e))
     }
 }
 
 
 function* ProfilePicSaga(){
-    yield takeLatest(GET_PROFILE_PICTURE.REQUEST, fetchProfilePic);
+    yield takeLatest(GET_PROFILE_PIC.REQUEST, fetchProfilePic);
 }
 
 export default ProfilePicSaga;

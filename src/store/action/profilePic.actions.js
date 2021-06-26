@@ -1,9 +1,9 @@
 import { createRequestTypes, action } from "../../utils/redux";
 
-export const GET_PROFILE_PICTURE = createRequestTypes("GET_PROFILE_PICTURE");
+export const GET_PROFILE_PIC = createRequestTypes("GET_PROFILE_PIC");
 
-export const getProfilePicture = {
-  request: () => action(GET_PROFILE_PICTURE.REQUEST),
-  success: (data) => action(GET_PROFILE_PICTURE.SUCCESS, data),
-  failure: (error) => action(GET_PROFILE_PICTURE.FAILURE, error),
+export const getProfilePic = {
+  request: () => action(GET_PROFILE_PIC.REQUEST),
+  success: (data) => action(GET_PROFILE_PIC.SUCCESS, data),
+  failure: (error) => action(GET_PROFILE_PIC.FAILURE, error),
 };

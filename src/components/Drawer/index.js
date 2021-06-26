@@ -15,8 +15,7 @@ import {
   IconButton,
   ListItem,
   ListItemText,
-  ListItemIcon,
-  Container, 
+  ListItemIcon, 
   Grid
 } from '@material-ui/core';
 
@@ -33,6 +32,7 @@ import PeopleIcon from '@material-ui/icons/People';
 import MailIcon from '@material-ui/icons/Mail';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
 import CategoryIcon from '@material-ui/icons/Category';
+
 
 
 import {Link} from 'react-router-dom';
@@ -110,11 +110,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-  LanguageToggle:{
-    display: "inline",
-    position: "absolute",
-    left: "0px"
-  }
 }));
 
 export default function MiniDrawer() {
@@ -151,7 +146,7 @@ export default function MiniDrawer() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap display='inline' >
+            <Typography variant="h6" noWrap style={{overflow:"visible"}} display='inline' >
               Shaktitva CMS
             </Typography>
             <Grid container style={{flexDirection: "row-reverse"}}>
