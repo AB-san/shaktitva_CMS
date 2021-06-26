@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
 const StoryCard = (props) => {
   const story = props.story;
   const classes = useStyles();
@@ -66,7 +67,6 @@ const StoryCard = (props) => {
             </CardContent>
           {/* </CardActionArea> */}
           <CardActions>
-            {/* TODO: add style property: flex-direction: "reverse" */}
             <Grid container style={{flexDirection: "row-reverse"}}>
             <Grid item>
             <Button color="primary" variant="outlined" component={RouterLink} to={`/story/${story.id}`}>
