@@ -101,7 +101,7 @@ const NGO = () => {
           <Grid container spacing={4}>
             {ngoDetails.length > 0 && ngoDetails.map((NGO, index) => {
               return (
-                <AllCard index={index} cardType="NGO" details={NGO} />);
+                <AllCard index={index} image={NGO.ngo_image} details={NGO} />);
             })}
           </Grid>
         </Container>

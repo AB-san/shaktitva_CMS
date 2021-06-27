@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 //Material-ui Components
-
 import {
     Typography,
     Container,
@@ -75,7 +74,6 @@ const StatesSec = () => {
                     renderInput={(params) => <TextField {...params} label="Search Box" variant="outlined" />}
                 />
                 {StatesDetails.map(StateDetail =>
-                //TODO:Change Expanded Panel
                     <Accordion expanded={expanded === StateDetail.state} onChange={handleChange(StateDetail.state)}>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}

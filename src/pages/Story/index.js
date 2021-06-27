@@ -47,16 +47,16 @@ const Stories = () => {
   const { loadingStories } = useSelector(state => state.story);
   const stories = lang === "hi" ? useSelector(state => state.story.hi) : useSelector(state => state.story.en);
 
-  if(loadingStories === true){
-    return <LoadingProgress />
-  }
-
+  
   useEffect(() => {
     lang === "en" ? dispatch(getEnglishStories.request()) : dispatch(getHindiStories.request());
   }, [lang])
-
-
+  
   const classes = useStyles();
+  
+  if(loadingStories === true){
+    return <LoadingProgress />
+  }
   return (
     <div className={classes.heroContent}>
       <Container >
@@ -70,7 +70,7 @@ const Stories = () => {
           <Grid container spacing={4}>
             {stories.length > 0 && stories.map((story, index) => {
               return (
-                <AllCard cardType="story" index={index} story={story} />);
+                <AllCard index={index} details={story} image={story.images[0]}/>);
             })}
           </Grid>
         </Container>

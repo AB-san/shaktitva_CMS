@@ -55,7 +55,7 @@ const Legal = () =>{
     const classes = useStyles();
 
     if(loadingLegalDetails){
-      return <CircularProgress />
+      return <LoadingProgress />
     }
 
     return(
@@ -70,7 +70,7 @@ const Legal = () =>{
           <Grid container spacing={4}>
             {legalDetails.length > 0 && legalDetails.map((Law, index) => {
               return (
-                <AllCard index={index} details={Law} cardType="legal" />);
+                <AllCard index={index} details={Law} image={Law.preview_image} />);
             })}
           </Grid>
         </Container>

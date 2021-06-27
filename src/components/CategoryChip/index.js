@@ -11,6 +11,7 @@ import {
     makeStyles
 } from '@material-ui/core';
 
+import { LoadingProgress } from '../index';
 const useStyles = makeStyles((theme) => ({
     chip: {
         margin: theme.spacing(0.5),
@@ -45,11 +46,11 @@ const CategoryChip = (props) => {
         Category = legalCategory.filter(Category => Category._id === props.category)[0];
     }
     
-    { loadingCategory === true && <h1>Loading..</h1> }
+    { loadingCategory === true && <LoadingProgress /> }
     
     
     if (Category === undefined) {
-        return <h1>Loading</h1>;
+        return <LoadingProgress />;
     }
     
     return (

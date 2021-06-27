@@ -43,16 +43,16 @@ const DefailtProfilePic = () => {
 
   const dispatch = useDispatch();
   const { loadingProfilePic } = useSelector(state => state.profilePic);
+  const classes = useStyles();
   useEffect(() => {
     dispatch(getProfilePic.request());
   }, [])
+  
+  const ProfilePic = useSelector(state => state.profilePic.profilePic);
+  console.log(ProfilePic);
   if(loadingProfilePic === true){
     return <LoadingProgress />
   }
-
-  const ProfilePic = useSelector(state => state.profilePic.profilePic);
-  console.log(ProfilePic);
-  const classes = useStyles();
   return (
     <div className={classes.heroContent}>
       <Container >

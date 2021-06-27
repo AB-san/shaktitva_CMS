@@ -4,17 +4,18 @@ import {
   CircularProgress
  } from '@material-ui/core';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     display: 'flex',
-//     '& > * + *': {
-//       marginLeft: theme.spacing(2),
-//     },
-//   },
-// }));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > * + *': {
+      margin: theme.spacing(20),
+    },
+  },
+}));
 
 export default function LoadingProgress() {
+const classes=useStyles();
   return (
-      <CircularProgress />
+      <CircularProgress  className={classes.root}/>
   );
 }

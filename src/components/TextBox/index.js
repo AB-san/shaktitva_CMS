@@ -17,7 +17,7 @@ const TextBox = (props) => {
     return (
         <div className={classes.heroContent}>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                {props.text}
+            <div dangerouslySetInnerHTML={{__html: props.text}}></div>
             </Typography>
         </div>);
 }

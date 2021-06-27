@@ -10,6 +10,7 @@ import CRUDButtonGroup from './CrudButtonGroup'
 import AllCard from './AllCard'
 import CategoryChip from './CategoryChip'
 import LoadingProgress from './LoadingProgress'
+import StatusChip from './StatusChip'
 
 export {
 	Drawer,
@@ -24,4 +25,5 @@ export {
 	AllCard,
 	CategoryChip,
 	LoadingProgress,
+	StatusChip,
 };
