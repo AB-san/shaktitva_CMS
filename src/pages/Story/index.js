@@ -9,7 +9,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 
-import { StoryCard, Heading } from '../../components/index'
+import { AllCard, Heading } from '../../components/index'
 import { getEnglishStories, getHindiStories } from '../../store/action/story.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -67,7 +67,7 @@ const Stories = () => {
           <Grid container spacing={4}>
             {stories.length > 0 && stories.map((story, index) => {
               return (
-                <StoryCard index={index} story={story} />);
+                <AllCard cardType="story" index={index} story={story} />);
             })}
           </Grid>
         </Container>

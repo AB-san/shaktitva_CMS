@@ -9,7 +9,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 
-import { Heading, LegalCard } from '../../components/index'
+import { Heading, AllCard } from '../../components/index'
 import { getEnglishLegal, getHindiLegal } from '../../store/action/legal.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -66,7 +66,7 @@ const Legal = () =>{
           <Grid container spacing={4}>
             {legalDetails.length > 0 && legalDetails.map((Law, index) => {
               return (
-                <LegalCard index={index} details={Law} />);
+                <AllCard index={index} details={Law} cardType="legal" />);
             })}
           </Grid>
         </Container>

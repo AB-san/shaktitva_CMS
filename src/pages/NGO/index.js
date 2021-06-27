@@ -12,7 +12,7 @@ import {
   TextField
 } from '@material-ui/core';
 
-import { Heading, NgoCard } from '../../components/index'
+import { Heading, AllCard } from '../../components/index'
 import { getEnglishNgoDetails, getHindiNgoDetails } from '../../store/action/NGO.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -99,7 +99,7 @@ const NGO = () => {
           <Grid container spacing={4}>
             {ngoDetails.length > 0 && ngoDetails.map((NGO, index) => {
               return (
-                <NgoCard index={index} details={NGO} />);
+                <AllCard index={index} cardType="NGO" details={NGO} />);
             })}
           </Grid>
         </Container>

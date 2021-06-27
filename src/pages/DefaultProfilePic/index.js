@@ -54,7 +54,7 @@ const DefailtProfilePic = () => {
     <div className={classes.heroContent}>
       <Container >
         <Heading text="Default Profile Pictures" />
-        <Typography variant="h3" align="center" style={{ color: "#fff" }} paragraph>
+        <Typography variant="h4" align="center" style={{ color: "#fff" }} paragraph>
           {loadingProfilePic === false && ProfilePic.length > 0 ? `Profile Pic loaded ${ProfilePic.length}` : "Loading..."}
         </Typography>
         <Grid container justify="center" alignItems="center" spacing="3">
