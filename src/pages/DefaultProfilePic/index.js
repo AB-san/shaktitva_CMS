@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 
-import { Heading } from '../../components/index'
+import { Heading,LoadingProgress } from '../../components/index'
 import { getProfilePic } from '../../store/action/profilePic.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,6 +46,9 @@ const DefailtProfilePic = () => {
   useEffect(() => {
     dispatch(getProfilePic.request());
   }, [])
+  if(loadingProfilePic === true){
+    return <LoadingProgress />
+  }
 
   const ProfilePic = useSelector(state => state.profilePic.profilePic);
   console.log(ProfilePic);

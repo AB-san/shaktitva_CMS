@@ -7,7 +7,8 @@ import {
   TextBox,
   Heading,
   StoryMetaData,
-  EditButtonGroup
+  EditButtonGroup,
+  LoadingProgress
 } from '../../components/index'
 
 
@@ -42,7 +43,7 @@ const storyDetailed = () => {
 
   const classes = useStyles();
   if (specificStory[0] === undefined) {
-    return <h1>Loading</h1>;
+    return <LoadingProgress />;
   }
 
   return (

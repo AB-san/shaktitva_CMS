@@ -37,7 +37,8 @@ const CategoryChip = (props) => {
     const storyCategory = useSelector(state => state.category.story);
     
     if (props.categoryType === "story") {
-        Category = storyCategory.filter(Category => Category._id === props.category)[0];
+        Category = storyCategory.filter(Category => Category._id=== props.category)[0];
+        console.log(Category)
     }
     
     if (props.categoryType === "legal") {
@@ -46,7 +47,6 @@ const CategoryChip = (props) => {
     
     { loadingCategory === true && <h1>Loading..</h1> }
     
-    { loadingCategory === false && legalCategory.length > 0 && console.log(Category.category_name); }
     
     if (Category === undefined) {
         return <h1>Loading</h1>;

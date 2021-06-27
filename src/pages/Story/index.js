@@ -9,7 +9,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 
-import { AllCard, Heading } from '../../components/index'
+import { AllCard, Heading,LoadingProgress } from '../../components/index'
 import { getEnglishStories, getHindiStories } from '../../store/action/story.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,6 +47,9 @@ const Stories = () => {
   const { loadingStories } = useSelector(state => state.story);
   const stories = lang === "hi" ? useSelector(state => state.story.hi) : useSelector(state => state.story.en);
 
+  if(loadingStories === true){
+    return <LoadingProgress />
+  }
 
   useEffect(() => {
     lang === "en" ? dispatch(getEnglishStories.request()) : dispatch(getHindiStories.request());

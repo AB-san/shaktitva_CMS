@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, makeStyles } from '@material-ui/core';
 import Date from '../Date/index';
+import {CategoryChip} from '../index'
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -15,9 +16,7 @@ const MetaData = (props) => {
     const classes = useStyles();
     return (
         <div className={classes.heroContent}>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                Category : {props.Category}
-            </Typography>
+            <CategoryChip category={props.Category} categoryType="story" />
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
                 Organisation : {props.Org}
             </Typography>

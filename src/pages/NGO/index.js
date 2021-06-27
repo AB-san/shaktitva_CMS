@@ -12,7 +12,7 @@ import {
   TextField
 } from '@material-ui/core';
 
-import { Heading, AllCard } from '../../components/index'
+import { Heading, AllCard,LoadingProgress } from '../../components/index'
 import { getEnglishNgoDetails, getHindiNgoDetails } from '../../store/action/NGO.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -60,17 +60,19 @@ const top100Films = [
 ];
 
 const NGO = () => {
-
   const dispatch = useDispatch();
   const lang = useSelector(state => state.lang);
   const { loadingNgoDetails } = useSelector(state => state.NGO);
   
   const ngoDetails = lang === "hi" ? useSelector(state => state.NGO.NGO_hi) : useSelector(state => state.NGO.NGO_en);
-
+  
   useEffect(() => {
     lang === "en" ? dispatch(getEnglishNgoDetails.request()) : dispatch(getHindiNgoDetails.request());
   }, [lang])
   
+  if(loadingNgoDetails === true){
+    <LoadingProgress />
+  }
   console.log(ngoDetails)
 
   const classes = useStyles();

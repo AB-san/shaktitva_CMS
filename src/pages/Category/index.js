@@ -11,7 +11,7 @@ import {
   } from '@material-ui/core';
   import AddCircleIcon from '@material-ui/icons/AddCircle';
 
-  import { Heading } from '../../components/index'
+  import { Heading,LoadingProgress } from '../../components/index'
   import { getStoryCategory, getLegalCategory } from '../../store/action/category.actions';
 
 
@@ -48,6 +48,10 @@ import {
       const legalCategory = useSelector(state => state.category.legal);
 
       const classes = useStyles();
+
+      if(loadingCategory === true){
+        return <LoadingProgress />
+      }
       
       return(
         <div className={classes.heroContent}>

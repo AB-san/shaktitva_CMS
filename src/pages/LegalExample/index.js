@@ -11,7 +11,8 @@ import 'react-h5-audio-player/lib/styles.css';
 import {
   TextBox,
   Heading,
-  EditButtonGroup
+  EditButtonGroup,
+  LoadingProgress
 } from '../../components/index'
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
     useEffect(() => {
       language === "en" ? dispatch(getEnglishLegal.request()) : dispatch(getHindiLegal.request());
     }, [language])
+    
+
 
     console.log(legalstories);
   
@@ -45,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   
     const classes = useStyles();
     if(legalStory === undefined){
-      return <h1>Loading</h1>
+      return <LoadingProgress />
     }
     return(
     <div className={classes.heroContent}>

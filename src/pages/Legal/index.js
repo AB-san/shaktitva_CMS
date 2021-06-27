@@ -6,10 +6,11 @@ import {
   Typography,
   Container,
   Grid,
-  makeStyles
+  makeStyles,
+  CircularProgress 
 } from '@material-ui/core';
 
-import { Heading, AllCard } from '../../components/index'
+import { Heading, AllCard, LoadingProgress } from '../../components/index'
 import { getEnglishLegal, getHindiLegal } from '../../store/action/legal.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -45,6 +46,9 @@ const Legal = () =>{
     const lang = useSelector(state => state.lang);
     const { loadingLegalDetails } = useSelector(state => state.legal);
     
+    if(loadingLegalDetails === true){
+      return <CircularProgress />
+    }
     
     useEffect(() => {
       lang === "en" ? dispatch(getEnglishLegal.request()) : dispatch(getHindiLegal.request());
