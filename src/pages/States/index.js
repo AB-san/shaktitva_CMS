@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 //Material-ui Components
 
@@ -42,11 +42,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const StatesSec = () => {
-    const [expanded, setExpanded] = React.useState(false);
-
+    const [expanded, setExpanded] = useState(false);
+    const classes = useStyles();
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
+
     const dispatch = useDispatch();
     const lang = useSelector(state => state.lang);
     const { loadingStatesDetails } = useSelector(state => state.states);
@@ -58,7 +59,7 @@ const StatesSec = () => {
 
     const StatesDetails = lang === "hi" ? useSelector(state => state.states.states_hi) : useSelector(state => state.states.states_en);
     console.log(StatesDetails);
-    const classes = useStyles();
+    
     return (
         <div className={classes.heroContent}>
             <Container>
@@ -75,7 +76,7 @@ const StatesSec = () => {
                 />
                 {StatesDetails.map(StateDetail =>
                 //TODO:Change Expanded Panel
-                    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                    <Accordion expanded={expanded === StateDetail.state} onChange={handleChange(StateDetail.state)}>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1bh-content"

@@ -46,10 +46,6 @@ const Legal = () =>{
     const lang = useSelector(state => state.lang);
     const { loadingLegalDetails } = useSelector(state => state.legal);
     
-    if(loadingLegalDetails === true){
-      return <CircularProgress />
-    }
-    
     useEffect(() => {
       lang === "en" ? dispatch(getEnglishLegal.request()) : dispatch(getHindiLegal.request());
     }, [lang])
@@ -57,7 +53,11 @@ const Legal = () =>{
     const legalDetails = lang === "hi" ? useSelector(state => state.legal.legal_hi) : useSelector(state => state.legal.legal_en);
   
     const classes = useStyles();
-    
+
+    if(loadingLegalDetails){
+      return <CircularProgress />
+    }
+
     return(
     <div className={classes.heroContent}>
       <Container >

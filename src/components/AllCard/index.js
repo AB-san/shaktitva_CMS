@@ -17,7 +17,6 @@ import { TextBox, CategoryChip } from '../index'
 
 //React h5 Audio Player
 import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
 
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -109,9 +108,11 @@ const AllCard = (props) => {
                         
                                 <CategoryChip category={props.details.category} categoryType={props.cardType} />
                         
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {props.details.brief_text}
-                                </Typography>
+                                {/* <Typography variant="body2" color="textSecondary" component="p"> */}
+                                    {/* {props.details.brief_text} */}
+                                    <div dangerouslySetInnerHTML={{__html: props.details.brief_text}}></div>
+
+                                {/* </Typography> */}
                         
                             </div>
                         }
