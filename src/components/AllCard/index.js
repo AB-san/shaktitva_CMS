@@ -45,10 +45,10 @@ const useStyles = makeStyles((theme) => ({
 
 
 const AllCard = (props) => {
-    const details=props.details;
-    const { flash_card : descriptionSTR } = details;
-    const { brief_text : descriptionLEG } = details;
-    const { description : descriptionNGO } = details;
+    const details = props.details;
+    const { flash_card: descriptionSTR } = details;
+    const { brief_text: descriptionLEG } = details;
+    const { description: descriptionNGO } = details;
     console.log(details);
     const classes = useStyles();
 
@@ -57,113 +57,115 @@ const AllCard = (props) => {
             <Grid container key={props.index}>
 
                 <Grid item xs={6}>
-                        <CardMedia
-                            className={classes.cardMedia}
-                            alt="Heroes"
-                            image={props.image}
-                            title="Heroes"
-                        />
+                    <CardMedia
+                        className={classes.cardMedia}
+                        alt="Heroes"
+                        image={props.image}
+                        title="Heroes"
+                    />
 
                 </Grid>
 
                 <Grid item xs={6}>
 
                     <CardContent>
+                        {/* //TODO:Combine first 2 cases */}
+                        <div>
+                            {descriptionSTR && <Typography gutterBottom variant="h5" component="h2">
+                                {details.heading}
+                            </Typography>}
+                            {descriptionLEG && <Typography gutterBottom variant="h5" component="h2">
+                                {details.heading}
+                            </Typography>}
+                            {descriptionNGO && <Typography gutterBottom variant="h5" component="h2">
+                                {details.name}
+                            </Typography>}
 
-                            {/* //TODO:Combine first 2 cases */}
-                            <div>
-                                {descriptionSTR && <Typography gutterBottom variant="h5" component="h2">
-                                    {details.heading}
-                                </Typography>}
-                                {descriptionLEG && <Typography gutterBottom variant="h5" component="h2">
-                                    {details.heading}
-                                </Typography>}
-                                {descriptionNGO && <Typography gutterBottom variant="h5" component="h2">
-                                    {details.name}
-                                </Typography>}
-
-                                {descriptionSTR && <div dangerouslySetInnerHTML={{__html: descriptionSTR}}></div>}
-                                {descriptionLEG && <div dangerouslySetInnerHTML={{__html: descriptionLEG}}></div>}
-                                {descriptionNGO && <div dangerouslySetInnerHTML={{__html: descriptionNGO}}></div>}
-                            </div>
+                            {descriptionSTR && <CategoryChip category={details.category_id} categoryType="story" />}
+                            {descriptionLEG && <CategoryChip category={details.category} categoryType="legal" />}
+                            {descriptionSTR && <div dangerouslySetInnerHTML={{ __html: descriptionSTR }}></div>}
+                            {descriptionLEG && <div dangerouslySetInnerHTML={{ __html: descriptionLEG }}></div>}
+                            {descriptionNGO && <div dangerouslySetInnerHTML={{ __html: descriptionNGO }}></div>}
+                        </div>
 
                     </CardContent>
-                    
+
                     <CardActions>
-                    
-                        { descriptionSTR &&
-                    
+
+
+                        {descriptionSTR &&
+
                             <Grid container style={{ flexDirection: "row-reverse" }}>
-                    
+
                                 <Grid item>
-                    
+
                                     <Button color="primary" variant="outlined" component={RouterLink} to={`/story/${details.id}`}>
                                         View More
                                     </Button>
-                    
+
                                 </Grid>
-                    
+
                             </Grid>}
-                    
-                        { descriptionLEG &&
-                    
+
+                        {descriptionLEG &&
+
                             <Grid container style={{ flexDirection: "row-reverse" }}>
-                    
+
                                 <Grid item>
                                     {details.misuse_text != null && details.misuse_text.length > 0 &&
-                    
+
                                         <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`/legal/misuse/${details._id}`}>
                                             View Misuse
                                         </Button>}
                                 </Grid>
-                    
+
                                 <Grid item>
-                    
+
                                     <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`/legal/${details._id}`}>
                                         View Detailed
                                     </Button>
-                    
+
                                 </Grid>
-                    
+
                                 <Grid item>
-                    
+
                                     {details.misuse_text != null && details.example_text.length > 0 &&
-                    
+
                                         <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`/legal/example/${details._id}`}>
                                             View Example
                                         </Button>}
-                    
+
                                 </Grid>
-                    
+
                                 <Grid item xs={12}>
-                    
+
                                     <AudioPlayer
                                         src={details.podcast_url}
                                         autoPlay={false} />
                                 </Grid>
-                    
+
                             </Grid>}
-                    
-                        { descriptionNGO &&
-                    
+
+                        {descriptionNGO &&
+
                             <Grid container style={{ flexDirection: "row-reverse" }}>
-                    
+
                                 <Grid item>
-                    
+
                                     <Button color="primary" variant="outlined" component={RouterLink} to={`/ngo/${details._id}`}>
                                         View More
                                     </Button>
-                    
+
                                 </Grid>
-                    
+
                             </Grid>}
-                    
+
                     </CardActions>
-                
+
                 </Grid>
-            
+
             </Grid>
-        
+
         </Card>
 
     )

@@ -15,7 +15,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import { Autocomplete } from '@material-ui/lab';
 
-import { Heading } from '../../components/index'
+import { Heading,LoadingProgress } from '../../components/index'
 import { getEnglishStates, getHindiStates } from '../../store/action/states.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -64,7 +64,7 @@ const StatesSec = () => {
             <Container>
                 <Heading text="States" />
                 <Typography variant="h5" align="center" style={{ color: "#fff" }} paragraph>
-                    {loadingStatesDetails === false && StatesDetails.length > 0 ? `States loaded ${StatesDetails.length}` : "Loading..."}
+                    {loadingStatesDetails === false && StatesDetails.length > 0 ? `States loaded ${StatesDetails.length}` : <LoadingProgress />}
                 </Typography>
                 <Autocomplete
                     id="combo-box-demo"

@@ -12,7 +12,8 @@ import {
   TextBox,
   Heading,
   EditButtonGroup,
-  LoadingProgress
+  LoadingProgress,
+  CategoryChip
 } from '../../components/index'
 
 const useStyles = makeStyles((theme) => ({
@@ -46,12 +47,13 @@ const useStyles = makeStyles((theme) => ({
   
     const classes = useStyles();
     if(legalStory === undefined){
-      return <CircularProgress />
+      return <LoadingProgress />
     }
     return(
     <div className={classes.heroContent}>
     <Heading text={legalStory.heading} />
     <EditButtonGroup status="4"/>
+    <CategoryChip category={legalStory.category} categoryType="legal" />
     <TextBox text={legalStory.main_text}/>
     {/* <Date date={legalStory.createdAt}/>
     <Date date={legalStory.updatedAt}/> */}

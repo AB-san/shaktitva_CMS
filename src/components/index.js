@@ -11,6 +11,7 @@ import AllCard from './AllCard'
 import CategoryChip from './CategoryChip'
 import LoadingProgress from './LoadingProgress'
 import StatusChip from './StatusChip'
+import CategoryCard from './CategoryCard'
 
 export {
 	Drawer,
@@ -26,4 +27,5 @@ export {
 	CategoryChip,
 	LoadingProgress,
 	StatusChip,
+	CategoryCard,
 };

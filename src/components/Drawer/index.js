@@ -20,7 +20,7 @@ import {
 } from '@material-ui/core';
 
 
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import HelpIcon from '@material-ui/icons/Help';
 import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
@@ -245,7 +245,7 @@ export default function MiniDrawer() {
             </ListItem>
             <ListItem button key = 'DefaultProfileImage' component={Link} to="/defaultprofilepic">
               <ListItemIcon>
-                <AccountCircleIcon />
+                <AccountBoxIcon />
               </ListItemIcon>
               <ListItemText primary = 'DefaultProfileImage' />
             </ListItem>
