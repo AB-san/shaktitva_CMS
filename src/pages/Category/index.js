@@ -6,7 +6,6 @@ import {
   Container,
   makeStyles,
   Paper,
-  Button,
   Grid
 } from '@material-ui/core';
 import AddCircleIcon from '@material-ui/icons/AddCircle';

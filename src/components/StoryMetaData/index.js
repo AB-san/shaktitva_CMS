@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Typography, makeStyles } from '@material-ui/core';
 import Date from '../Date/index';
 import { CategoryChip,StatusChip } from '../index'
@@ -23,5 +24,11 @@ const MetaData = (props) => {
             <StatusChip status={props.Status} />
             <Date date={props.DOP} />
         </div>);
+}
+MetaData.propType = {
+    Category:PropTypes.string,
+    Org:PropTypes.string,
+    DOP:PropTypes.string,
+    Status:PropTypes.string
 }
 export default MetaData;

@@ -13,6 +13,7 @@ import MailingList from './MailingList';
 import Category from './Category'
 import States from './States'
 import DefailtProfilePic from './DefaultProfilePic'
+import Config from './Configuration'
 export {
     SignUp,
     SignIn,
@@ -29,4 +30,5 @@ export {
     Category,
     States,
     DefailtProfilePic,
+    Config
 }

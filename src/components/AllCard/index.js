@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 //Material-ui Components
 import {
     Typography,
@@ -12,8 +12,15 @@ import {
     makeStyles,
 } from '@material-ui/core';
 
-import { TextBox, CategoryChip, LoadingProgress } from '../index'
+import { CategoryChip } from '../index'
 
+import {
+    StoryDetailedRoute,
+    LegalDetailedRoute,
+    LegalMisuseRoute,
+    LegalExampleRoute,
+    NGODetailedRoute
+} from '../../utils/constants'
 //React h5 Audio Player
 import AudioPlayer from 'react-h5-audio-player';
 
@@ -46,10 +53,10 @@ const useStyles = makeStyles((theme) => ({
 
 const AllCard = (props) => {
     const details = props.details;
+    console.log(props)
     const { flash_card: descriptionSTR } = details;
     const { brief_text: descriptionLEG } = details;
     const { description: descriptionNGO } = details;
-    console.log(details);
     const classes = useStyles();
 
     return (
@@ -69,7 +76,9 @@ const AllCard = (props) => {
                 <Grid item xs={6}>
 
                     <CardContent>
-                        {/* //TODO:Combine first 2 cases */}
+                        
+                        {/* //TODO:Combine first 2 cases and remove repetition */}
+                        
                         <div>
                             {descriptionSTR && <Typography gutterBottom variant="h5" component="h2">
                                 {details.heading}
@@ -99,7 +108,7 @@ const AllCard = (props) => {
 
                                 <Grid item>
 
-                                    <Button color="primary" variant="outlined" component={RouterLink} to={`/story/${details.id}`}>
+                                    <Button color="primary" variant="outlined" component={RouterLink} to={StoryDetailedRoute}>
                                         View More
                                     </Button>
 
@@ -114,14 +123,14 @@ const AllCard = (props) => {
                                 <Grid item>
                                     {details.misuse_text != null && details.misuse_text.length > 0 &&
 
-                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`/legal/misuse/${details._id}`}>
+                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalMisuseRoute}>
                                             View Misuse
                                         </Button>}
                                 </Grid>
 
                                 <Grid item>
 
-                                    <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`/legal/${details._id}`}>
+                                    <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalDetailedRoute}>
                                         View Detailed
                                     </Button>
 
@@ -131,7 +140,7 @@ const AllCard = (props) => {
 
                                     {details.misuse_text != null && details.example_text.length > 0 &&
 
-                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`/legal/example/${details._id}`}>
+                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalExampleRoute}>
                                             View Example
                                         </Button>}
 
@@ -152,7 +161,7 @@ const AllCard = (props) => {
 
                                 <Grid item>
 
-                                    <Button color="primary" variant="outlined" component={RouterLink} to={`/ngo/${details._id}`}>
+                                    <Button color="primary" variant="outlined" component={RouterLink} to={NGODetailedRoute}>
                                         View More
                                     </Button>
 
@@ -169,6 +178,30 @@ const AllCard = (props) => {
         </Card>
 
     )
+}
+
+AllCard.propTypes = {
+    index:PropTypes.number,
+    image:PropTypes.string,
+    //story
+    details:PropTypes.shape({
+        flash_card:PropTypes.string,
+        heading:PropTypes.string,
+        category_id:PropTypes.string,
+      }),
+    //legal
+    details:PropTypes.shape({
+        brief_text:PropTypes.string,
+        heading:PropTypes.string,
+        category:PropTypes.string,
+        misuse_text:PropTypes.string,
+        example_text:PropTypes.string,
+      }),
+    //NGO
+    details:PropTypes.shape({
+        name:PropTypes.string,
+        description:PropTypes.string,
+    })
 }
 
 export default AllCard;

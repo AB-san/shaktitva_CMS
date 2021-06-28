@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     Typography,
     makeStyles,
@@ -6,6 +7,7 @@ import {
     Button,
   } from '@material-ui/core';
 
+import { Date } from '../index'
   const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: '100vw',
@@ -37,18 +39,28 @@ return(
             {category.category_name.en}
         </Typography>
 
-        <Typography variant="body2" color="textSecondary" component="p">
-            {category.createdAt}
-        </Typography>
+        <Date date={category.createdAt} />
 
-        <Typography variant="body2" color="textSecondary" component="p">
-            {category.updatedAt}
-        </Typography>
+        <Date date={category.updatedAt} />
 
         <Button variant="contained" className={classes.heroButtons} color="primary"> Edit</Button>
+        
         <Button variant="contained" className={classes.heroButtons} color="secondary"> Delete </Button>
 
     </div>
 </Paper>);
 }
+
+CategoryCard.propTypes = {
+  category:PropTypes.shape({
+    category_name:PropTypes.shape({
+      hi:PropTypes.string,
+      en:PropTypes.string
+    }),
+    category_type:PropTypes.string,
+    updateAt:PropTypes.string,
+    createdAt:PropTypes.string,
+  }),
+}
+
 export default CategoryCard;

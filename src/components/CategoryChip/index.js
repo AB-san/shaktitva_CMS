@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import PropTypes from 'prop-types'
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getStoryCategory, getLegalCategory } from '../../store/action/category.actions';
@@ -20,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 const CategoryChip = (props) => {
-
     const classes = useStyles();
     
     const dispatch = useDispatch();
@@ -39,7 +40,6 @@ const CategoryChip = (props) => {
     
     if (props.categoryType === "story") {
         Category = storyCategory.filter(Category => Category._id=== props.category)[0];
-        console.log(Category)
     }
     
     if (props.categoryType === "legal") {
@@ -59,6 +59,11 @@ const CategoryChip = (props) => {
             <Chip className={classes.chip} color="primary" avatar={<Avatar>हिं</Avatar>} label={Category.category_name.hi} />
         </div>
     )
+}
+
+CategoryChip.propTypes = {
+    category:PropTypes.string,
+    categoryType:PropTypes.string
 }
 
 export default CategoryChip;

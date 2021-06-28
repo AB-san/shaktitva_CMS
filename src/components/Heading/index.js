@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 //Material-ui Components
 import {Typography , makeStyles } from '@material-ui/core';
 
@@ -22,5 +24,8 @@ const Heading = (props) =>{
           {props.text}
         </Typography>
     );
+}
+Heading.propTypes ={
+  text:PropTypes.string
 }
 export default Heading;

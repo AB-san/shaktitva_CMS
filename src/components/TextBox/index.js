@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
 
 const TextBox = (props) => {
     const classes = useStyles();
-
     return (
         <div className={classes.heroContent}>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
@@ -21,5 +21,7 @@ const TextBox = (props) => {
             </Typography>
         </div>);
 }
-
+TextBox.propTypes ={
+    text:PropTypes.string
+}
 export default TextBox;

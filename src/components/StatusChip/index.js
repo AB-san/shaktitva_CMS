@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 //Material-ui Components
 import {
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const CategoryChip = (props) => {
+const StatusChip = (props) => {
     const classes = useStyles();
     return (
         //TODO: Change Avatar as per condition
@@ -26,5 +27,7 @@ const CategoryChip = (props) => {
         </div>
     )
 }
-
-export default CategoryChip;
+StatusChip.propTypes ={
+    status:PropTypes.string,
+}
+export default StatusChip;

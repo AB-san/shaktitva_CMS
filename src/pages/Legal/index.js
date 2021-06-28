@@ -7,7 +7,6 @@ import {
   Container,
   Grid,
   makeStyles,
-  CircularProgress 
 } from '@material-ui/core';
 
 import { Heading, AllCard, LoadingProgress } from '../../components/index'

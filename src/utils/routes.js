@@ -19,14 +19,41 @@ import {
     MailingList,
     Category,
     States,
+    Config,
     DefailtProfilePic,
   } from '../pages/index';
-  
+
+  import {routes} from './constants'
+
+  const pages = [SignUp,
+    SignIn,
+    Story,
+    StoryDetailed,
+    NGO,
+    NgoDetailed,
+    Legal,
+    LegalLaw,
+    LegalMisuse,
+    LegalExample,
+    Users,
+    MailingList,
+    Config,
+    Category,
+    States,
+    DefailtProfilePic,]
 const Routes = () => {
     return (
         <HashRouter>
             <CssBaseline />
             <Drawer />
+            {/* 
+            pages.map(page =>
+            routes.map(route=>
+            {<Route path={route}>
+            <{page}>
+            </Route>}
+            )); 
+            */}
             <Route path ="/signup">
                 <SignUp />
             </Route>
@@ -64,7 +91,7 @@ const Routes = () => {
                 <MailingList />
             </Route>
             <Route path ="/config">
-                <Users />
+                <Config />
             </Route>
             <Route path ="/category">
                 <Category />
