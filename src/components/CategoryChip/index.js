@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types'
 
+import {CategorySkeleton} from '../index';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getStoryCategory, getLegalCategory } from '../../store/action/category.actions';
@@ -46,11 +48,11 @@ const CategoryChip = (props) => {
         Category = legalCategory.filter(Category => Category._id === props.category)[0];
     }
     
-    { loadingCategory === true && <LoadingProgress /> }
+    { loadingCategory === true && <CategorySkeleton /> }
     
     
     if (Category === undefined) {
-        return <LoadingProgress />;
+        return <CategorySkeleton />;
     }
     
     return (

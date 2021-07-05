@@ -23,38 +23,18 @@ import {
     DefailtProfilePic,
   } from '../pages/index';
 
-  import {routes} from './constants'
+  import {routes,pages} from './constants'
 
-  const pages = [SignUp,
-    SignIn,
-    Story,
-    StoryDetailed,
-    NGO,
-    NgoDetailed,
-    Legal,
-    LegalLaw,
-    LegalMisuse,
-    LegalExample,
-    Users,
-    MailingList,
-    Config,
-    Category,
-    States,
-    DefailtProfilePic,]
+  
 const Routes = () => {
     return (
         <HashRouter>
             <CssBaseline />
             <Drawer />
-            {/* 
-            pages.map(page =>
-            routes.map(route=>
-            {<Route path={route}>
-            <{page}>
-            </Route>}
-            )); 
-            */}
-            <Route path ="/signup">
+            
+            {pages.map(page => {routes.map(route=>{<Route path={route}> `<${page} />` </Route>})});} 
+           
+            {/* <Route path ="/signup">
                 <SignUp />
             </Route>
             <Route path ="/signin">
@@ -101,7 +81,7 @@ const Routes = () => {
             </Route>
             <Route path ="/defaultprofilepic">
                 <DefailtProfilePic />
-            </Route>
+            </Route> */}
         </HashRouter>
     )
 }

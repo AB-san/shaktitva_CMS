@@ -13,6 +13,7 @@ import LoadingProgress from './LoadingProgress'
 import StatusChip from './StatusChip'
 import CategoryCard from './CategoryCard'
 import Date from './Date'
+import CategorySkeleton from './CategorySkeleton'
 
 export {
 	Drawer,
@@ -29,5 +30,6 @@ export {
 	LoadingProgress,
 	StatusChip,
 	CategoryCard,
-	Date
+	Date,
+	CategorySkeleton
 };

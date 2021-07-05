@@ -1,4 +1,3 @@
-import {details} from '../components/AllCard'
 export const routes = ["/signup",
 "/signin",
 "/story",
@@ -15,13 +14,24 @@ export const routes = ["/signup",
 "/category",
 "/states",
 "/defaultprofilepic"];
-export const StoryDetailedRoute =  "";
-// `/story/${details.id}`
-export const LegalDetailedRoute = "";
-// `/legal/${details._id}`
-export const LegalMisuseRoute = "";
-// `/legal/misuse/${details._id}`
-export const LegalExampleRoute = "";
-// `/legal/example/${details._id}`
-export const NGODetailedRoute = "";
-// `/ngo/${details._id}`;
+const pages = ["SignUp",
+    "SignIn",
+    "Story",
+    "StoryDetailed",
+    "NGO",
+    "NgoDetailed",
+    "Legal",
+    "LegalLaw",
+    "LegalMisuse",
+    "LegalExample",
+    "Users",
+    "MailingList",
+    "Config",
+    "Category",
+    "States",
+    "DefailtProfilePic",]
+export const StoryDetailedRoute =  `/story`
+export const LegalDetailedRoute =  `/legal`
+export const LegalMisuseRoute =  `/legal/misuse`
+export const LegalExampleRoute =  `/legal/example`
+export const NGODetailedRoute =  `/ngo`;
