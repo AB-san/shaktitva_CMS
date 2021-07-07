@@ -8,6 +8,9 @@ import category from './category.reducer';
 import lang from './language.reducer';
 import states from './states.reducer'
 import profilePic from './profilePic.reducer'
+import mailingList from './mailingList.reducer'
+import users from './users.reducer'
+import config from './config.reducer'
 
 //call combine reducer function and pass all imported reducers as function in it, and then export that combined Reducer;
 const allReducers = combineReducers({
@@ -18,6 +21,9 @@ const allReducers = combineReducers({
     category,
     states,
     profilePic,
+    mailingList,
+    users,
+    config,
 });
 
 const rootReducer = (state, action) => {

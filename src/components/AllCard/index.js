@@ -107,7 +107,8 @@ const AllCard = (props) => {
                             <Grid container style={{ flexDirection: "row-reverse" }}>
 
                                 <Grid item>
-                                    <Button color="primary" variant="outlined" component={RouterLink} to={`${StoryDetailedRoute}/${details.id}`}>
+
+                                    <Button color="primary" variant="outlined" component={RouterLink} to={StoryDetailedRoute}>
                                         View More
                                     </Button>
 
@@ -122,14 +123,14 @@ const AllCard = (props) => {
                                 <Grid item>
                                     {details.misuse_text != null && details.misuse_text.length > 0 &&
 
-                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`${LegalMisuseRoute}/${details._id}`}>
+                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalMisuseRoute}>
                                             View Misuse
                                         </Button>}
                                 </Grid>
 
                                 <Grid item>
 
-                                    <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`${LegalDetailedRoute}/${details._id}`}>
+                                    <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalDetailedRoute}>
                                         View Detailed
                                     </Button>
 
@@ -139,7 +140,7 @@ const AllCard = (props) => {
 
                                     {details.misuse_text != null && details.example_text.length > 0 &&
 
-                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`${LegalExampleRoute}/${details._id}`}>
+                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalExampleRoute}>
                                             View Example
                                         </Button>}
 
@@ -160,7 +161,7 @@ const AllCard = (props) => {
 
                                 <Grid item>
 
-                                    <Button color="primary" variant="outlined" component={RouterLink} to={`${NGODetailedRoute}/${details._id}`}>
+                                    <Button color="primary" variant="outlined" component={RouterLink} to={NGODetailedRoute}>
                                         View More
                                     </Button>
 

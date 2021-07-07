@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import {
     Typography,
     Container,
     makeStyles
 } from '@material-ui/core';
+
+import { Heading,LoadingProgress } from '../../components/index'
+import { getUsers } from '../../store/action/users.actions';
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -17,6 +21,19 @@ const useStyles = makeStyles((theme) => ({
 
 const Users = () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const { loadingUsers } = useSelector(state => state.users);
+    useEffect(() => {
+        dispatch(getUsers.request());
+    }, [])
+
+    const Users = useSelector(state => state.users.users);
+    console.log(Users);
+    if (loadingUsers === true) {
+        return <LoadingProgress />
+    }
+
+    
     return (
         <div className={classes.heroContent}>
             <Container>

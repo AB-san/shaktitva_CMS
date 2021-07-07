@@ -11,6 +11,9 @@ import legalCategorySaga from './category.legal.saga'
 import englishStatesSaga from './states.english.saga';
 import hindiStatesSaga from './states.hindi.saga';
 import profilePicSaga from './profilePic.saga'
+import mailingListSaga from './mailingList.saga';
+import usersSaga from './users.saga.js'
+import configSaga from './config.saga';
 
 export default function* rootSaga(){
     yield all([
@@ -24,6 +27,9 @@ export default function* rootSaga(){
         storyCategorySaga(),
         englishStatesSaga(),
         hindiStatesSaga(),
-        profilePicSaga()
+        profilePicSaga(),
+        mailingListSaga(),
+        usersSaga(),
+        configSaga(),
     ])
 }

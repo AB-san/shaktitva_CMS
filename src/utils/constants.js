@@ -1,20 +1,27 @@
-export const routes = ["/signup",
-"/signin",
-"/story",
-"/story/:StoryID",
-"/ngo",
-"/ngo/:NgoID",
-"/legal",
-"/legal/:LegalID",
-"/legal/misuse/:LegalID",
-"/legal/example/:LegalID",
-"/users",
-"/mailinglist",
-"/config",
-"/category",
-"/states",
-"/defaultprofilepic"];
-const pages = ["SignUp",
+import {details} from '../components/AllCard'
+import {
+    SignUp,
+    SignIn,
+    Story,
+    StoryDetailed,
+    NGO,
+    NgoDetailed,
+    Legal,
+    LegalLaw,
+    LegalMisuse,
+    LegalExample,
+    Users,
+    MailingList,
+    Category,
+    States,
+    Config,
+    DefailtProfilePic,
+} from '../pages/index';
+export const pages = [
+    SignUp,SignIn
+];
+
+export const pages2 = ["<SignUp />",
     "SignIn",
     "Story",
     "StoryDetailed",

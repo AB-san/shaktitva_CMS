@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+
 import {
     Typography,
     Container,
     makeStyles
 } from '@material-ui/core';
+
+import { getMailingList } from '../../store/action/mailingList.actions';
+import { Heading, LoadingProgress } from '../../components/index'
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -16,7 +21,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MailingList = () => {
+    const dispatch = useDispatch();
+    const { loadingMailingList } = useSelector(state => state.profilePic);
     const classes = useStyles();
+    useEffect(() => {
+        dispatch(getMailingList.request());
+    }, [])
+    const MailingList = useSelector(state => state.mailingList.mailingList);
+    console.log(MailingList);
+    if (loadingMailingList === true) {
+        return <LoadingProgress />
+    }
     return (
         <div className={classes.heroContent}>
             <Container>

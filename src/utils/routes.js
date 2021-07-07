@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Route,HashRouter} from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import { Drawer } from '../components/index';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -21,20 +21,19 @@ import {
     States,
     Config,
     DefailtProfilePic,
-  } from '../pages/index';
+} from '../pages/index';
 
-  import {routes,pages} from './constants'
+import { routes, pages } from './constants'
 
-  
+
 const Routes = () => {
     return (
         <HashRouter>
             <CssBaseline />
             <Drawer />
-            
-            {pages.map(page => {routes.map(route=>{<Route path={route}> `<${page} />` </Route>})});} 
-           
-            {/* <Route path ="/signup">
+            {/* {pages.map(page => { routes.map(route => { <Route path={route}> <page/> </Route> }) })} */}
+
+            <Route path ="/signup">
                 <SignUp />
             </Route>
             <Route path ="/signin">
@@ -81,7 +80,7 @@ const Routes = () => {
             </Route>
             <Route path ="/defaultprofilepic">
                 <DefailtProfilePic />
-            </Route> */}
+            </Route>
         </HashRouter>
     )
 }
