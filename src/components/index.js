@@ -13,6 +13,8 @@ import LoadingProgress from './LoadingProgress'
 import StatusChip from './StatusChip'
 import CategoryCard from './CategoryCard'
 import Date from './Date'
+import MailingListTable from './MailingListTable'
+import UsersTable from './UsersTable'
 
 export {
 	Drawer,
@@ -29,5 +31,7 @@ export {
 	LoadingProgress,
 	StatusChip,
 	CategoryCard,
-	Date
+	Date,
+	MailingListTable,
+	UsersTable,
 };

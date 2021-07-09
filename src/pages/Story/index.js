@@ -70,7 +70,7 @@ const Stories = () => {
           <Grid container spacing={4}>
             {stories.length > 0 && stories.map((story, index) => {
               return (
-                <AllCard index={index} details={story} image={story.images[0]}/>);
+                <AllCard index={index} details={story} cardType="Story" image={story.images[0]}/>);
             })}
           </Grid>
         </Container>

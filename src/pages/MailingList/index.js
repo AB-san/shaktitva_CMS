@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 
 import { getMailingList } from '../../store/action/mailingList.actions';
-import { Heading, LoadingProgress } from '../../components/index'
+import { MailingListTable ,Heading, LoadingProgress } from '../../components/index'
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -41,6 +41,7 @@ const MailingList = () => {
                 <Typography variant="h5" align="center" color="textSecondary" paragraph>
                     This is the Mailing List Page
                 </Typography>
+                <MailingListTable list={MailingList} />
             </Container>
         </div>);
 };

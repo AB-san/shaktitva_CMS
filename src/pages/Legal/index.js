@@ -69,7 +69,7 @@ const Legal = () =>{
           <Grid container spacing={4}>
             {legalDetails.length > 0 && legalDetails.map((Law, index) => {
               return (
-                <AllCard index={index} details={Law} image={Law.preview_image} />);
+                <AllCard index={index} cardType="Legal" details={Law} image={Law.preview_image} />);
             })}
           </Grid>
         </Container>

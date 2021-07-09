@@ -6,7 +6,7 @@ import {
     makeStyles
 } from '@material-ui/core';
 
-import { Heading,LoadingProgress } from '../../components/index'
+import { Heading,LoadingProgress,UsersTable } from '../../components/index'
 import { getUsers } from '../../store/action/users.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -43,6 +43,7 @@ const Users = () => {
                 <Typography variant="h5" align="center" color="textSecondary" paragraph>
                     This is the Users Page
                 </Typography>
+                <UsersTable users={Users}/>
             </Container>
         </div>);
 };

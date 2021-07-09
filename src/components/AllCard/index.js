@@ -54,10 +54,14 @@ const useStyles = makeStyles((theme) => ({
 const AllCard = (props) => {
     const details = props.details;
     console.log(props)
-    const { flash_card: descriptionSTR } = details;
-    const { brief_text: descriptionLEG } = details;
-    const { description: descriptionNGO } = details;
+    if(props.cardType === "Story"){
+    var { heading:heading, category_id: category, flash_card: description } = details;}
+    if(props.cardType === "Legal"){
+    var { heading: heading,brief_text: description } = details;}
+    if(props.cardType === "NGO"){
+    var { name: heading ,description: description } = details;}
     const classes = useStyles();
+    console.log(details);
 
     return (
         <Card className={classes.card}>
@@ -77,32 +81,21 @@ const AllCard = (props) => {
 
                     <CardContent>
                         
-                        {/* //TODO:Combine first 2 cases and remove repetition */}
-                        
+                                                
                         <div>
-                            {descriptionSTR && <Typography gutterBottom variant="h5" component="h2">
-                                {details.heading}
-                            </Typography>}
-                            {descriptionLEG && <Typography gutterBottom variant="h5" component="h2">
-                                {details.heading}
-                            </Typography>}
-                            {descriptionNGO && <Typography gutterBottom variant="h5" component="h2">
-                                {details.name}
-                            </Typography>}
-
-                            {descriptionSTR && <CategoryChip category={details.category_id} categoryType="story" />}
-                            {descriptionLEG && <CategoryChip category={details.category} categoryType="legal" />}
-                            {descriptionSTR && <div dangerouslySetInnerHTML={{ __html: descriptionSTR }}></div>}
-                            {descriptionLEG && <div dangerouslySetInnerHTML={{ __html: descriptionLEG }}></div>}
-                            {descriptionNGO && <div dangerouslySetInnerHTML={{ __html: descriptionNGO }}></div>}
-                        </div>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {heading}
+                            </Typography>
+                            {/* <CategoryChip category={category} categoryType={props.cardType} /> */}
+                            <div dangerouslySetInnerHTML={{ __html: description }}></div>
+                            </div>
 
                     </CardContent>
 
                     <CardActions>
 
 
-                        {descriptionSTR &&
+                        {(props.cardType==="Story" || props.cardType==="NGO") &&
 
                             <Grid container style={{ flexDirection: "row-reverse" }}>
 
@@ -116,7 +109,7 @@ const AllCard = (props) => {
 
                             </Grid>}
 
-                        {descriptionLEG &&
+                        {props.cardType==="Legal" &&
 
                             <Grid container style={{ flexDirection: "row-reverse" }}>
 
@@ -155,7 +148,7 @@ const AllCard = (props) => {
 
                             </Grid>}
 
-                        {descriptionNGO &&
+                        {/* {props.cardType==="NGO" &&
 
                             <Grid container style={{ flexDirection: "row-reverse" }}>
 
@@ -167,7 +160,7 @@ const AllCard = (props) => {
 
                                 </Grid>
 
-                            </Grid>}
+                            </Grid>} */}
 
                     </CardActions>
 

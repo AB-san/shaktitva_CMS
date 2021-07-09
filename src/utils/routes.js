@@ -20,7 +20,7 @@ import {
     Category,
     States,
     Config,
-    DefailtProfilePic,
+    DefaultProfilePic,
 } from '../pages/index';
 
 import { routes, pages } from './constants'
@@ -79,10 +79,10 @@ const Routes = () => {
                 <States />
             </Route>
             <Route path ="/defaultprofilepic">
-                <DefailtProfilePic />
+                <DefaultProfilePic /> 
             </Route>
         </HashRouter>
-    )
+    ) 
 }
 
 export default Routes;

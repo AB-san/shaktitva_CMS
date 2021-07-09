@@ -45,13 +45,9 @@ const CategoryChip = (props) => {
     if (props.categoryType === "legal") {
         Category = legalCategory.filter(Category => Category._id === props.category)[0];
     }
-    
-    { loadingCategory === true && <LoadingProgress /> }
-    
-    
-    if (Category === undefined) {
-        return <LoadingProgress />;
-    }
+    console.log(Category)
+
+    { (loadingCategory === true||Category===undefined) && <LoadingProgress /> }
     
     return (
         <div>
