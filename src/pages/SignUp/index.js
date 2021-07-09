@@ -64,7 +64,7 @@ import {
         <Heading text="Sign Up" />
         <Grid
           container
-          direction="row"
+          direction="column"
           justify="center"
           alignItems="center"
         >
@@ -115,7 +115,7 @@ import {
             }
           />
           </FormControl>
-          <Button className={classes.heroButtons} variant="contained">Default</Button>
+          <Button className={classes.heroButtons} variant="contained">Sign Up</Button>
         </Grid>
       
       </Container>
