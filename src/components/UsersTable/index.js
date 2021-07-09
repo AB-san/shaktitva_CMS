@@ -25,8 +25,8 @@ export default function UsersTable(props) {
             <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Username</TableCell>
-                        <TableCell align="right">_id</TableCell>
+                        <TableCell>Index</TableCell>
+                        <TableCell align="right">Username</TableCell>
                         <TableCell align="right">Name</TableCell>
                         <TableCell align="right">State</TableCell>
                         <TableCell align="right">D.O.B.</TableCell>
@@ -38,12 +38,12 @@ export default function UsersTable(props) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {props.users.map((user) => (
+                    {props.users.map((user,index) => (
                         <TableRow key={user._id}>
                             <TableCell component="th" scope="row">
-                                {user.username}
+                                {index+1}
                             </TableCell>
-                            <TableCell align="right">{user._id} </TableCell>
+                            <TableCell align="right">{user.username} </TableCell>
                             <TableCell align="right">{user.name} </TableCell>
                             <TableCell align="right">{user.state} </TableCell>
                             <TableCell align="right"><Date date={user.date_of_birth}/></TableCell>

@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     Typography,
     Container,
-    makeStyles
+    makeStyles,
+    Paper,
 } from '@material-ui/core';
 
-import { Heading, LoadingProgress } from '../../components/index'
+import { Date, LoadingProgress } from '../../components/index'
 import { getConfig } from '../../store/action/config.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,9 +28,8 @@ const Users = () => {
         dispatch(getConfig.request());
     }, [])
 
-    const Config = useSelector(state => state.config.config);
-    console.log(Config);
-    if (loadingConfig === true) {
+    const Config = useSelector(state => state.config.config)[0];
+    if (loadingConfig === true || Config === undefined) {
         return <LoadingProgress />
     }
     return (
@@ -38,9 +38,23 @@ const Users = () => {
                 <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                     Config Page
                 </Typography>
-                <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                    This is the Users Page
+                <Paper>
+                <Typography variant="h1" align="center" color="textSecondary" paragraph>
+                    {Config.maintainenanceFlag}
                 </Typography>
+                <Typography variant="h1" align="center" color="textSecondary" paragraph>
+                    {Config.maintainenanceDuration}
+                </Typography>
+                <Typography variant="h1" align="center" color="textSecondary" paragraph>
+                    {Config.forceUpdateVersion}
+                </Typography>
+                <Typography align="center" color="textSecondary" paragraph>
+                <Date date = {Config.createdAt} />
+                </Typography>
+                <Typography align="center" color="textSecondary" paragraph>
+                <Date date = {Config.updatedAt} />
+                </Typography>
+                </Paper>
             </Container>
         </div>);
 };

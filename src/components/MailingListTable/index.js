@@ -25,7 +25,7 @@ export default function MailingListTable(props) {
             <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>_id</TableCell>
+                        <TableCell>index</TableCell>
                         <TableCell align="right">Created At</TableCell>
                         <TableCell align="right">Updated At</TableCell>
                         <TableCell align="right">E-Mail</TableCell>
@@ -34,10 +34,10 @@ export default function MailingListTable(props) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {props.list.map((item) => (
-                        <TableRow key={item._id}>
+                    {props.list.map((item,index) => (
+                        <TableRow key={index}>
                             <TableCell component="th" scope="row">
-                                {item._id}
+                                {index+1}
                             </TableCell>
                             <TableCell align="right"><Date date={item.createdAt} /></TableCell>
                             <TableCell align="right"><Date date={item.updatedAt} /></TableCell>
