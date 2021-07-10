@@ -16,7 +16,7 @@ import {
     LegalMisuse,
     LegalExample,
     Users,
-    UsersDetailed,
+    UserDetailed,
     MailingList,
     Category,
     States,
@@ -24,7 +24,7 @@ import {
     DefaultProfilePic,
 } from '../pages/index';
 
-import { routes, pages } from './constants'
+// import { routes, pages } from './constants'
 
 
 const Routes = () => {
@@ -67,9 +67,9 @@ const Routes = () => {
             <Route path ="/users">
                 <Users />
             </Route>
-            {/* <Route path ="/users/:UserID">
-                <UsersDetailed />
-            </Route> */}
+            <Route path ="/users/:UserID">
+                <UserDetailed />
+            </Route>
             <Route path ="/mailinglist">
                 <MailingList />
             </Route>

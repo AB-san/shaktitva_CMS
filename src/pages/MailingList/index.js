@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 
 import { getMailingList } from '../../store/action/mailingList.actions';
-import { MailingListTable ,Heading, LoadingProgress } from '../../components/index'
+import { MailingListTable , LoadingProgress } from '../../components/index'
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {

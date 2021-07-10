@@ -1,8 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import{
-  makeStyles, 
-  useTheme,
+  makeStyles,
 } from '@material-ui/core';
 // actions
 import { changeLanguage } from '../../store/action/language.actions';

@@ -21,21 +21,15 @@ const useStyles = makeStyles((theme) => ({
 const NgoDetailed = () => {
   const lang = useSelector(state => state.lang);
   const dispatch = useDispatch();
-
   const ngoDetails = lang === "hi" ? useSelector(state => state.NGO.NGO_hi) : useSelector(state => state.NGO.NGO_en);
-
   useEffect(() => {
     lang === "en" ? dispatch(getEnglishNgoDetails.request()) : dispatch(getHindiNgoDetails.request());
   }, [lang]);
-
   const params = useParams();
   const NgoID = params.NgoID;
-
   const specificNgo = ngoDetails.filter(Ngo => Ngo._id === NgoID)[0];
   console.log(specificNgo);
-
   const classes = useStyles();
-  
   if (specificNgo === undefined) {
     return <h1>Loading</h1>;
   }

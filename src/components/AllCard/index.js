@@ -55,11 +55,11 @@ const AllCard = (props) => {
     const details = props.details;
     console.log(props)
     if(props.cardType === "Story"){
-    var { heading:heading, category_id: category, flash_card: description } = details;}
+    var { heading:heading,id:id, category_id: category, flash_card: description } = details;}
     if(props.cardType === "Legal"){
-    var { heading: heading,brief_text: description } = details;}
+    var { heading: heading,_id:id,brief_text: description } = details;}
     if(props.cardType === "NGO"){
-    var { name: heading ,description: description } = details;}
+    var { name: heading ,_id:id,description: description } = details;}
     const classes = useStyles();
     console.log(details);
 
@@ -95,13 +95,13 @@ const AllCard = (props) => {
                     <CardActions>
 
 
-                        {(props.cardType==="Story" || props.cardType==="NGO") &&
+                        {(props.cardType==="Story") &&
 
                             <Grid container style={{ flexDirection: "row-reverse" }}>
 
                                 <Grid item>
 
-                                    <Button color="primary" variant="outlined" component={RouterLink} to={StoryDetailedRoute}>
+                                    <Button color="primary" variant="outlined" component={RouterLink} to={`${StoryDetailedRoute}/${id}`}>
                                         View More
                                     </Button>
 
@@ -116,14 +116,14 @@ const AllCard = (props) => {
                                 <Grid item>
                                     {details.misuse_text != null && details.misuse_text.length > 0 &&
 
-                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalMisuseRoute}>
+                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`${LegalMisuseRoute}/${id}`}>
                                             View Misuse
                                         </Button>}
                                 </Grid>
 
                                 <Grid item>
 
-                                    <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalDetailedRoute}>
+                                    <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`${LegalDetailedRoute}/${id}`}>
                                         View Detailed
                                     </Button>
 
@@ -133,7 +133,7 @@ const AllCard = (props) => {
 
                                     {details.misuse_text != null && details.example_text.length > 0 &&
 
-                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={LegalExampleRoute}>
+                                        <Button className={classes.heroButtons} color="primary" variant="outlined" component={RouterLink} to={`${LegalExampleRoute}/${id}`}>
                                             View Example
                                         </Button>}
 
@@ -148,19 +148,19 @@ const AllCard = (props) => {
 
                             </Grid>}
 
-                        {/* {props.cardType==="NGO" &&
+                        {props.cardType==="NGO" &&
 
                             <Grid container style={{ flexDirection: "row-reverse" }}>
 
                                 <Grid item>
 
-                                    <Button color="primary" variant="outlined" component={RouterLink} to={NGODetailedRoute}>
+                                    <Button color="primary" variant="outlined" component={RouterLink} to={`${NGODetailedRoute}/${id}`}>
                                         View More
                                     </Button>
 
                                 </Grid>
 
-                            </Grid>} */}
+                            </Grid>}
 
                     </CardActions>
 

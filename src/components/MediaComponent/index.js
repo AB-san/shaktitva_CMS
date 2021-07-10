@@ -1,9 +1,9 @@
-import React from 'react';
+// import React from 'react';
 
-const MediaComponent = (props) => {
-    console.log(props);
-    return(
-            <img src={props.source} />
-    );
-}
-export default MediaComponent;
+// const MediaComponent = (props) => {
+//     console.log(props);
+//     return(
+//             <img src={props.source} />
+//     );
+// }
+// export default MediaComponent;

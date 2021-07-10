@@ -58,7 +58,7 @@ export default function UsersTable(props) {
                             <TableCell align="right"><Date date={user.createdAt}/></TableCell>
                             <TableCell align="right"><Date date={user.updatedAt}/></TableCell>
                             <TableCell align="right">{user.phone} </TableCell>
-                            <TableCell align="right"><Button variant="contained" color="primary" component={RouterLink} to={UserDetailedRoute}>
+                            <TableCell align="right"><Button variant="contained" color="primary" component={RouterLink} to={`${UserDetailedRoute}/${user._id}`}>
                                 <DetailsIcon />
                             </Button></TableCell>
                             <TableCell align="right"><Button variant="contained" color="primary">

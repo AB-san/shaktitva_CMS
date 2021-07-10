@@ -6,7 +6,7 @@ import {
     makeStyles
 } from '@material-ui/core';
 
-import { Heading,LoadingProgress,UsersTable } from '../../components/index'
+import { LoadingProgress,UsersTable } from '../../components/index'
 import { getUsers } from '../../store/action/users.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -28,7 +28,6 @@ const Users = () => {
     }, [])
 
     const Users = useSelector(state => state.users.users);
-    console.log(Users);
     if (loadingUsers === true) {
         return <LoadingProgress />
     }

@@ -8,7 +8,8 @@ import NgoDetailed from './NgoDetailed/';
 import LegalLaw from './LegalLaw';
 import LegalExample from './LegalExample';
 import LegalMisuse from './LegalMisuse';
-import Users from './Users/';
+import Users from './Users';
+import UserDetailed from './UserDetailed';
 import MailingList from './MailingList';
 import Category from './Category'
 import States from './States'
@@ -26,6 +27,7 @@ export {
     NGO,
     NgoDetailed,
     Users,
+    UserDetailed,
     MailingList,
     Category,
     States,

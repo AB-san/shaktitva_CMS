@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { makeStyles,Typography,CircularProgress } from '@material-ui/core';
+import { makeStyles,Typography } from '@material-ui/core';
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 //actions
@@ -13,7 +13,8 @@ import {
   Heading,
   EditButtonGroup,
   LoadingProgress,
-  CategoryChip
+  CategoryChip,
+  Date
 } from '../../components/index'
 
 const useStyles = makeStyles((theme) => ({
@@ -55,8 +56,8 @@ const useStyles = makeStyles((theme) => ({
     <EditButtonGroup status="4"/>
     <CategoryChip category={legalStory.category} categoryType="legal" />
     <TextBox text={legalStory.main_text}/>
-    {/* <Date date={legalStory.createdAt}/>
-    <Date date={legalStory.updatedAt}/> */}
+    <Date date={legalStory.createdAt}/>
+    <Date date={legalStory.updatedAt}/>
     <Typography gutterBottom variant="h5" component="h2" style={{color:"#fff"}}>Tell Me More</Typography>
     <AudioPlayer
           style={{display:"block"}}

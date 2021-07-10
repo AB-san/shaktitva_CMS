@@ -46,13 +46,13 @@ const CategoryChip = (props) => {
         Category = legalCategory.filter(Category => Category._id === props.category)[0];
     }
     console.log(Category)
-
-    { (loadingCategory === true||Category===undefined) && <LoadingProgress /> }
+    let loadingBool=(loadingCategory === true||Category===undefined) 
+    loadingBool && <LoadingProgress />
     
     return (
         <div>
-            <Chip className={classes.chip} color="primary" avatar={<Avatar>En</Avatar>} label={Category.category_name.en} />
-            <Chip className={classes.chip} color="primary" avatar={<Avatar>हिं</Avatar>} label={Category.category_name.hi} />
+            {/* <Chip className={classes.chip} color="primary" avatar={<Avatar>En</Avatar>} label={Category.category_name.en} /> */}
+            {/* <Chip className={classes.chip} color="primary" avatar={<Avatar>हिं</Avatar>} label={Category.category_name.hi} /> */}
         </div>
     )
 }

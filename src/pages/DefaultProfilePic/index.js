@@ -71,7 +71,7 @@ const DefailtProfilePic = () => {
             <Grid item xs>
               <Paper elevation={2} className={classes.card}>
                 <div className={classes.text}>
-                  <img className={classes.images} src={pic.image} />
+                  <img className={classes.images} alt="women" src={pic.image} />
                   <Button variant="contained" className={classes.heroButtons} color="primary"> Edit</Button>
                   <Button variant="contained" className={classes.heroButtons} color="secondary"> Delete </Button>
                 </div>
