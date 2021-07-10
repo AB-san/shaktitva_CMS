@@ -64,25 +64,25 @@ const Routes = () => {
             <Route path ="/legal/example/:LegalID">
                 <LegalExample />
             </Route>
-            <Route path ="/users">
+            <Route path ="/users" exact>
                 <Users />
             </Route>
             <Route path ="/users/:UserID">
                 <UserDetailed />
             </Route>
-            <Route path ="/mailinglist">
+            <Route path ="/mailinglist" exact>
                 <MailingList />
             </Route>
-            <Route path ="/config">
+            <Route path ="/config" exact>
                 <Config />
             </Route>
-            <Route path ="/category">
+            <Route path ="/category" exact>
                 <Category />
             </Route>
-            <Route path ="/states">
+            <Route path ="/states" exact>
                 <States />
             </Route>
-            <Route path ="/defaultprofilepic">
+            <Route path ="/defaultprofilepic" exact>
                 <DefaultProfilePic /> 
             </Route>
         </HashRouter>

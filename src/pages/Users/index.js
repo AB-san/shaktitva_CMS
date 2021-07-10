@@ -28,11 +28,12 @@ const Users = () => {
     }, [])
 
     const Users = useSelector(state => state.users.users);
+    
     if (loadingUsers === true) {
         return <LoadingProgress />
     }
-
     
+
     return (
         <div className={classes.heroContent}>
             <Container>
