@@ -40,7 +40,7 @@ const Users = () => {
                 </Typography>
                 <Paper>
                 <Typography variant="h1" align="center" color="textSecondary" paragraph>
-                    {Config.maintainenanceFlag}
+                    {Config.maintainenanceFlag ? "true":"false"}
                 </Typography>
                 <Typography variant="h1" align="center" color="textSecondary" paragraph>
                     {Config.maintainenanceDuration}

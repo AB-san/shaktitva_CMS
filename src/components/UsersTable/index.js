@@ -10,7 +10,13 @@ import {
     TableRow,
     Paper
 } from '@material-ui/core'
+import {UserDetailedRoute} from '../../utils/constants';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import BlockIcon from '@material-ui/icons/Block';
+import DetailsIcon from '@material-ui/icons/Details';
 import { Date } from '../index'
+import { Link as RouterLink } from 'react-router-dom';
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
@@ -33,8 +39,10 @@ export default function UsersTable(props) {
                         <TableCell align="right">Created At</TableCell>
                         <TableCell align="right">Updated At</TableCell>
                         <TableCell align="right">Phone</TableCell>
-                        <TableCell align="right">Edit</TableCell>
-                        <TableCell align="right">Block</TableCell>
+                        <TableCell align="center">Details</TableCell>
+                        <TableCell align="center">Edit</TableCell>
+                        <TableCell align="center">Ban</TableCell>
+                        <TableCell align="center">Delete</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -50,11 +58,17 @@ export default function UsersTable(props) {
                             <TableCell align="right"><Date date={user.createdAt}/></TableCell>
                             <TableCell align="right"><Date date={user.updatedAt}/></TableCell>
                             <TableCell align="right">{user.phone} </TableCell>
+                            <TableCell align="right"><Button variant="contained" color="primary" component={RouterLink} to={UserDetailedRoute}>
+                                <DetailsIcon />
+                            </Button></TableCell>
                             <TableCell align="right"><Button variant="contained" color="primary">
-                                Edit
+                                <EditIcon />
                             </Button></TableCell>
                             <TableCell align="right"><Button variant="contained" color="secondary">
-                                Block
+                                <BlockIcon />
+                            </Button></TableCell>
+                            <TableCell align="right"><Button variant="contained" color="secondary">
+                                <DeleteIcon />
                             </Button></TableCell>
                         </TableRow>
                     ))}

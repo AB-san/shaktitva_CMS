@@ -42,3 +42,4 @@ export const LegalDetailedRoute =  `/legal`
 export const LegalMisuseRoute =  `/legal/misuse`
 export const LegalExampleRoute =  `/legal/example`
 export const NGODetailedRoute =  `/ngo`;
+export const UserDetailedRoute =  `/users`;

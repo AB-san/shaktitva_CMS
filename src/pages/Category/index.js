@@ -60,7 +60,6 @@ const Category = () => {
 
       <Container >
         <Heading text="Categories" />
-
         <Heading text="Story" />
         <Typography variant="h3" align="center" style={{ color: "#fff" }} paragraph>
           {loadingCategory === false && storyCategory.length > 0 ? `Story Category loaded ${storyCategory.length}` : "Loading..."}

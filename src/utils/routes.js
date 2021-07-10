@@ -66,6 +66,9 @@ const Routes = () => {
             <Route path ="/users">
                 <Users />
             </Route>
+            {/* <Route path ="/users/:UserID">
+                <UsersDetailed />
+            </Route> */}
             <Route path ="/mailinglist">
                 <MailingList />
             </Route>
