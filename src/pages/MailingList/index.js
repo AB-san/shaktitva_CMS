@@ -4,8 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     Typography,
     Container,
-    makeStyles
+    makeStyles,
+    TextField,
+    Grid,
 } from '@material-ui/core';
+
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 import { getMailingList } from '../../store/action/mailingList.actions';
 import { MailingListTable , LoadingProgress } from '../../components/index'
@@ -38,9 +42,15 @@ const MailingList = () => {
                 <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                     Mailing List Page
                 </Typography>
-                <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                    This is the Mailing List Page
-                </Typography>
+                <Grid item xs={12}>
+                    <Autocomplete
+                        id="combo-box-demo"
+                        options={MailingList}
+                        getOptionLabel={(email) => email.email}
+                        style={{ padding:"2rem",color: "#fff" }}
+                        renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+                    />
+                </Grid>
                 <MailingListTable list={MailingList} />
             </Container>
         </div>);

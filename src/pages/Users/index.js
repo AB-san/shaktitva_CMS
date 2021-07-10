@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     Typography,
     Container,
-    makeStyles
+    makeStyles,
+    TextField,
+    Grid,
 } from '@material-ui/core';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
-import { LoadingProgress,UsersTable } from '../../components/index'
+import { LoadingProgress, UsersTable } from '../../components/index'
 import { getUsers } from '../../store/action/users.actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -16,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
     heroButtons: {
         marginTop: theme.spacing(4),
-    }
+    },
 }));
 
 const Users = () => {
@@ -28,11 +31,11 @@ const Users = () => {
     }, [])
 
     const Users = useSelector(state => state.users.users);
-    
+
     if (loadingUsers === true) {
         return <LoadingProgress />
     }
-    
+
 
     return (
         <div className={classes.heroContent}>
@@ -40,10 +43,16 @@ const Users = () => {
                 <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                     Users Page
                 </Typography>
-                <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                    This is the Users Page
-                </Typography>
-                <UsersTable users={Users}/>
+                <Grid item xs={12}>
+                    <Autocomplete
+                        id="combo-box-demo"
+                        options={Users}
+                        getOptionLabel={(user) => user.name}
+                        style={{ padding:"2rem",color: "#fff" }}
+                        renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+                    />
+                </Grid>
+                <UsersTable users={Users} />
             </Container>
         </div>);
 };
