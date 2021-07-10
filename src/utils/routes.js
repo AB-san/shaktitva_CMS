@@ -16,6 +16,7 @@ import {
     LegalMisuse,
     LegalExample,
     Users,
+    UsersDetailed,
     MailingList,
     Category,
     States,
