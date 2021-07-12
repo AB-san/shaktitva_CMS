@@ -1,6 +1,6 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { MailingListApi } from "../../services/mailingList.service";
-import { getMailingList,GET_MAILING_LIST } from "../action/mailingList.actions";
+import { getMailingList,GET_MAILING_LIST,deleteEmail,DELETE_MAILING_LIST } from "../action/mailingList.actions";
 
 function* fetchMailingList(){
     try{
@@ -11,8 +11,19 @@ function* fetchMailingList(){
     }
 }
 
+function* removeEmail(){
+    try{
+        const {data} = yield call(MailingListApi.deleteEmail);
+        yield put(deleteEmail.success(data))
+    }catch(e){
+        yield put(deleteEmail.failure(e))
+    }
+}
+
+
 function* mailingListSaga(){
     yield takeLatest(GET_MAILING_LIST.REQUEST, fetchMailingList);
+    yield takeEvery(DELETE_MAILING_LIST.REQUEST, removeEmail);
 }
 
 export default mailingListSaga; 

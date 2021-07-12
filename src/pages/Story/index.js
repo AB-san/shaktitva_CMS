@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   heroContent: {
-    backgroundColor: "#242B2E",
+    // backgroundColor: "#242B2E",
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {

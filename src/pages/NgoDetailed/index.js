@@ -10,7 +10,7 @@ import {
   } from '../../components/index'
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    backgroundColor: "#242B2E",
+    // backgroundColor: "#242B2E",
     padding: theme.spacing(15, 0, 6),
   },
   heroButtons: {

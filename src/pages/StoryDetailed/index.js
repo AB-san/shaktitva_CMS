@@ -18,7 +18,7 @@ import 'react-h5-audio-player/lib/styles.css';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    backgroundColor: "#242B2E",
+    // backgroundColor: "#242B2E",
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
