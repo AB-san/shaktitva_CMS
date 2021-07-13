@@ -6,7 +6,8 @@ export const MailingListApi = {
         return axiosInstance.get("/newsletter/");
     },
     deleteEmail: (data) => {
-        console.log(axiosInstance.delete("/newsletter/delete/",data));
-        return axiosInstance.delete("/newsletter/delete/",data);
+        // console.log(axiosInstance.delete("/newsletter/delete/",data));
+        console.log(data)
+        return axiosInstance.post("/newsletter/delete/",data);
     }
 }

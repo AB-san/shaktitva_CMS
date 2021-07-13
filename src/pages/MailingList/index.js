@@ -48,7 +48,10 @@ const MailingList = () => {
                         options={MailingList}
                         getOptionLabel={(email) => email.email}
                         style={{ padding:"2rem",color: "#fff" }}
-                        renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+                        autoComplete="true"
+                        autoHighlight="true"
+                        renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />
+                        }
                     />
                 </Grid>
                 <MailingListTable list={MailingList} />

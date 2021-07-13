@@ -5,7 +5,7 @@ export const DELETE_MAILING_LIST = createRequestTypes("DELETE_MAILING_LIST");
 
 
 export const deleteEmail = {
-    request: () => action(DELETE_MAILING_LIST.REQUEST),
+    request: (data) => action(DELETE_MAILING_LIST.REQUEST,data),
     success: (data) => action(DELETE_MAILING_LIST.SUCCESS,data),
     failure: (error) => action(DELETE_MAILING_LIST.FAILURE,error)
 }

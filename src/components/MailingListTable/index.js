@@ -1,5 +1,6 @@
 import * as React from 'react';
 // import { DataGrid } from '@material-ui/data-grid';
+import { useDispatch} from "react-redux";
 import {
     Table,
     TableHead,
@@ -14,6 +15,9 @@ import {
 import SendIcon from '@material-ui/icons/Send';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Date } from '../index'
+import { useEffect } from 'react';
+import { deleteEmail } from '../../store/action/mailingList.actions';
+// import {DELETE_MAILING_LIST} from '../../store/action/mailingList.actions';
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
@@ -57,6 +61,12 @@ const useStyles = makeStyles({
 
 export default function MailingListTable(props) {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const deleteEntry = (index) => {
+        alert(index);
+        dispatch(deleteEmail.request(index));
+        // console.log(index);
+    };
     // return (
     //     <div style={{ height: 400, width: '100%' }}>
     //         <DataGrid
@@ -95,7 +105,7 @@ export default function MailingListTable(props) {
                                 <SendIcon />
                             </Button></TableCell>
                             <TableCell align="right">
-                            <Button variant="contained" color="secondary">
+                            <Button variant="contained" color="secondary" onClick={()=>deleteEntry(item._id)}>
                                 <DeleteIcon />
                             </Button>
                             </TableCell>

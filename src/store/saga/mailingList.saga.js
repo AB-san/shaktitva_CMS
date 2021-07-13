@@ -11,9 +11,9 @@ function* fetchMailingList(){
     }
 }
 
-function* removeEmail(){
+function* removeEmail(action){
     try{
-        const {data} = yield call(MailingListApi.deleteEmail);
+        const {data} = yield call(MailingListApi.deleteEmail,action.payload);
         yield put(deleteEmail.success(data))
     }catch(e){
         yield put(deleteEmail.failure(e))
