@@ -20,6 +20,7 @@ const requestHandler = request => {
 };
 
 const errorHandler = async error => {
+  console.log("Error---",error);
   if (error.response.status === 401) {
     window.location.href = "/401";
   }

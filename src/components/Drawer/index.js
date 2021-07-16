@@ -183,12 +183,13 @@ export default function MiniDrawer() {
           <Divider />
           <List>
             {/* TODO: remove duplicacy of code!! */}
-          <ListItem button key = 'SignIn' component={Link} to="/signin">
+            <ListItem button key='SignIn' component={Link} to="/signin">
               <ListItemIcon>
-              <PeopleIcon />
+                <PeopleIcon />
               </ListItemIcon>
               <ListItemText primary = 'Sign In' />
             </ListItem>
+
             <ListItem button key = 'SignUp' component={Link} to="/signup">
               <ListItemIcon>
               <PeopleIcon />

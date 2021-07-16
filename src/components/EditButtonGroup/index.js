@@ -6,7 +6,9 @@ import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
 
 import {Button,ButtonGroup} from '@material-ui/core';
-const EditButtonGroup = (props) => {
+
+//FIXME: reduce code repetition
+const EditButtonGroup = ({status}) => {
     return (
         <ButtonGroup>
             <Button
@@ -16,28 +18,28 @@ const EditButtonGroup = (props) => {
             >
                 Edit
             </Button>
-            {props.status === "0" && <Button
+            {status === "0" && <Button
                 variant="contained"
                 color="yellow"
                 startIcon={<SaveIcon />}
             >
                 Publish
             </Button>}
-            {props.status === "1" && <Button
+            {status === "1" && <Button
                 variant="contained"
                 color="yellow"
                 startIcon={<SaveIcon />}
             >
                 UnPublish
             </Button>}
-            {props.status === "2" && <Button
+            {status === "2" && <Button
                 variant="contained"
                 color="yellow"
                 startIcon={<SaveIcon />}
             >
                 Save as Draft
             </Button>}
-            {props.status === "4" && <Button
+            {status === "4" && <Button
                 variant="contained"
                 color="yellow"
                 startIcon={<SaveIcon />}
@@ -56,6 +58,6 @@ const EditButtonGroup = (props) => {
 }
 
 EditButtonGroup.propTypes ={
-    status:PropTypes.string
+    status:PropTypes.string.isRequired
 }
 export default EditButtonGroup;

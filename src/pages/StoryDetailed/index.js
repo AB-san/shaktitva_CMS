@@ -32,6 +32,7 @@ const storyDetailed = () => {
   const dispatch = useDispatch();
 
   const stories = language === "hi" ? useSelector(state => state.story.hi) : useSelector(state => state.story.en);
+
   useEffect(() => {
     language === "en" ? dispatch(getEnglishStories.request()) : dispatch(getHindiStories.request());
   }, [language])
@@ -50,7 +51,9 @@ const storyDetailed = () => {
     <div className={classes.heroContent}>
       <Container>
         <Heading text={specificStory[0].heading} />
+        {/* TODO: align this button group on right */}
         <EditButtonGroup status={specificStory[0].status} />
+        
         <StoryMetaData
           Category={specificStory[0].category_id}
           Org={specificStory[0].organisation_id}
@@ -58,9 +61,9 @@ const storyDetailed = () => {
           Status={specificStory[0].status}
         />
         <TextBox text={specificStory[0].main_text} />
-        <br />
+        
         <TextBox text={specificStory[0].flash_card} />
-        <br />
+        
         <TextBox text={specificStory[0].moral} />
         <AudioPlayer
           src={specificStory[0].podcast_url}

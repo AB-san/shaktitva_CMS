@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useDispatch } from 'react-redux';
 import{
   makeStyles,
@@ -11,8 +11,7 @@ import { ToggleButtonGroup, ToggleButton } from '@material-ui/lab';
 const useStyles = makeStyles((theme) => ({
  button:{
   marginTop:"5px",
-  backgroundColor:"#20bf55",
-  backgroundImage:"linearGradient(315deg, #20bf55 0%, #01baef 74%)"
+  backgroundColor:"#20bf55"
  }
 }));
 // materialUI components
@@ -20,10 +19,26 @@ const useStyles = makeStyles((theme) => ({
 const LanguageToggle = () => {
     const dispatch = useDispatch();
     const classes = useStyles();
+    const [value, setValue] = useState("en");
+
+    const handleChange = (lang) => {
+      dispatch(changeLanguage.changeLang("en"));
+      setValue(lang);
+    }
+
     return (
-        <ToggleButtonGroup exclusive variant="contained" color="primary" aria-label="contained primary button group" >
-          <ToggleButton className={classes.button} size="small" onClick ={()=>dispatch(changeLanguage.changeLang("en"))}> English</ToggleButton>
-          <ToggleButton className={classes.button} size="small" onClick ={()=>dispatch(changeLanguage.changeLang("hi"))} > हिंदी</ToggleButton>
+        <ToggleButtonGroup 
+          value={value}
+          exclusive variant="contained" color="primary" aria-label="contained primary button group" >
+          <ToggleButton 
+            className={classes.button} 
+            size="small" 
+            onClick ={()=>handleChange("en")}
+            selected={value==="en"}  
+          > English</ToggleButton>
+          <ToggleButton 
+            selected={value==="hi "}  
+          className={classes.button} size="small" onClick ={()=>handleChange("hi")}> हिंदी</ToggleButton>
         </ToggleButtonGroup>
     )
 }

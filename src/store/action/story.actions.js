@@ -5,7 +5,7 @@ export const GET_ENGLISH_STORIES = createRequestTypes("GET_ENGLISH_STORIES");
 export const GET_HINDI_STORIES = createRequestTypes("GET_HINDI_STORIES");
 
 export const getEnglishStories = {
-  request: () => action(GET_ENGLISH_STORIES.REQUEST),
+  request: () => action(GET_ENGLISH_STORIES.REQUEST), 
   success: (data) => action(GET_ENGLISH_STORIES.SUCCESS, data),
   failure: (error) => action(GET_ENGLISH_STORIES.FAILURE, error),
 };

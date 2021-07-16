@@ -6,7 +6,8 @@ import { getEnglishNgoDetails, getHindiNgoDetails } from '../../store/action/NGO
 import {
     TextBox,
     Heading,
-    EditButtonGroup
+    EditButtonGroup,
+    Date
   } from '../../components/index'
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -39,21 +40,21 @@ const NgoDetailed = () => {
         <Heading text={specificNgo.name} />
         <EditButtonGroup status="4"/>
         <TextBox text={specificNgo.description} />
-        <br />
+        
         <TextBox text={specificNgo.address} />
-        <br />
+        
         {specificNgo.states.map(NgoState=><TextBox text={NgoState}/>)}
-        <br />
+        
         {specificNgo.categories.map(NgoCategory=><TextBox text={NgoCategory}/>)}
-        <br />
+        
         {specificNgo.cities.map(NgoCity=><TextBox text={NgoCity}/>)}
-        <br />
+        
         <TextBox text = {specificNgo.helpline_number} />
-        <br />
-        {/* <Date date={specificNgo.createdAt} />
-        <br />
-        <Date date={specificNgo.updatedAt} /> 
-        <br />*/}
+        
+        <Date title="Created at" date={specificNgo.createdAt} />
+        
+        <Date title="Updated at" date={specificNgo.updatedAt} /> 
+        
       </Container>
     </div>
     );

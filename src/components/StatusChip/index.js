@@ -20,10 +20,10 @@ const StatusChip = (props) => {
     return (
         //TODO: Change Avatar as per condition
         <div>
-            {props.status==="0" && <Chip className={classes.chip} color="primary" avatar={<Avatar>Un</Avatar>} label="Unpublished" />}
+            {props.status==="0" && <Chip className={classes.chip} color="primary" avatar={<Avatar>Un</Avatar>} label="Draft" />}
             {props.status==="1" &&<Chip className={classes.chip} color="primary" avatar={<Avatar>Pub</Avatar>} label="Published" />}
-            {props.status==="2" &&<Chip className={classes.chip} color="secondary" avatar={<Avatar>D</Avatar>} label="Draft" />}
-            {props.status>2 &&<Chip className={classes.chip} color="primary" avatar={<Avatar>O</Avatar>} label="Placeholder" />}            
+            {props.status==="2" &&<Chip className={classes.chip} color="secondary" avatar={<Avatar>D</Avatar>} label="Pending for Review" />}
+            {props.status>2 &&<Chip className={classes.chip} color="primary" avatar={<Avatar>O</Avatar>} label="Other" />}            
         </div>
     )
 }

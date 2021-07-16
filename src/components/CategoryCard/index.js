@@ -7,7 +7,8 @@ import {
     Button,
   } from '@material-ui/core';
 
-import { Date } from '../index'
+import { Date } from '../index';
+
   const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: '100vw',
@@ -17,19 +18,19 @@ import { Date } from '../index'
       height: theme.spacing(30),
     },
     text: {
-      padding:theme.spacing(3,2,3)
+      padding:theme.spacing(1,2,3)
     },
     heroButtons: {
-        margin: theme.spacing(4,1,0),
+        margin: theme.spacing(2,1,0),
       },
     
   }));
 
-const CategoryCard = (props) =>{
-const category = props.category;
-const classes = useStyles();
-return(
-<Paper elevation={2} className={classes.card}>
+const CategoryCard = ({category}) =>{
+
+  const classes = useStyles();
+  return(
+    <Paper elevation={2} className={classes.card}>
     <div className={classes.text}>
         <Typography variant="h6" color="textSecondary" component="p">
             {category.category_name.hi}
@@ -39,12 +40,12 @@ return(
             {category.category_name.en}
         </Typography>
 
-        <Date date={category.createdAt} />
+        <Date title="Created at" date={category.createdAt} />
 
-        <Date date={category.updatedAt} />
+        <Date title="Updated at" date={category.updatedAt} />
 
         <Button variant="contained" className={classes.heroButtons} color="primary"> Edit</Button>
-        
+        {/* FIXME: remove repitition */}
         <Button variant="contained" className={classes.heroButtons} color="secondary"> Delete </Button>
 
     </div>
@@ -54,12 +55,12 @@ return(
 CategoryCard.propTypes = {
   category:PropTypes.shape({
     category_name:PropTypes.shape({
-      hi:PropTypes.string,
-      en:PropTypes.string
+      hi:PropTypes.string.isRequired,
+      en:PropTypes.string.isRequired
     }),
-    category_type:PropTypes.string,
-    updateAt:PropTypes.string,
-    createdAt:PropTypes.string,
+    category_type:PropTypes.string.isRequired,
+    updateAt:PropTypes.string.isRequired,
+    createdAt:PropTypes.string.isRequired,
   }),
 }
 

@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function UsersTable(props) {
+const UsersTable = (props) => {
     const classes = useStyles();
 
     return (
@@ -78,3 +78,7 @@ export default function UsersTable(props) {
         </TableContainer>
     );
 }
+
+export default UsersTable;
+
+//TODO: add proptypes

@@ -6,7 +6,8 @@ import { CategoryChip,StatusChip } from '../index'
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
-        backgroundColor: theme.palette.background.paper,
+        padding: theme.spacing(4, 4, 4, 4),
+        marginBottom: '4px'
     },
     heroButtons: {
         marginTop: theme.spacing(4),
@@ -18,17 +19,18 @@ const MetaData = (props) => {
     return (
         <div className={classes.heroContent}>
             <CategoryChip category={props.Category} categoryType="story" />
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                Organisation : {props.Org}
+            <Typography variant="h6" align="right" color="textSecondary" paragraph>
+                Published By : {props.Org}
+                <StatusChip status={props.Status} />
+                <Date title="Published On" date={props.DOP} />
             </Typography>
-            <StatusChip status={props.Status} />
-            <Date date={props.DOP} />
+            
         </div>);
 }
 MetaData.propType = {
-    Category:PropTypes.string,
-    Org:PropTypes.string,
-    DOP:PropTypes.string,
-    Status:PropTypes.string
+    Category:PropTypes.string.isRequired,
+    Org:PropTypes.string.isRequired,
+    DOP:PropTypes.string.isRequired,
+    Status:PropTypes.string.isRequired
 }
 export default MetaData;
