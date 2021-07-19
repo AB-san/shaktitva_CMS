@@ -62,17 +62,10 @@ const useStyles = makeStyles({
 export default function MailingListTable(props) {
     const classes = useStyles();
     const dispatch = useDispatch();
-<<<<<<< Updated upstream
 
     const deleteEntry = (id) => {
         alert(id);
         dispatch(deleteEmail.request(id));
-=======
-    const deleteEntry = (index) => {
-        const data = {id:index}
-        alert(index);
-        dispatch(deleteEmail.request(index));
->>>>>>> Stashed changes
         // console.log(index);
     };
     // return (

@@ -17,7 +17,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 
-import { Heading } from '../../components/index'
+import { Heading, LoadingProgress } from '../../components/index'
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '100vw',

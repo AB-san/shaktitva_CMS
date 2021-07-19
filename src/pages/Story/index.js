@@ -9,7 +9,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 
-import { AllCard, Heading,LoadingProgress } from '../../components/index'
+import { AllCard,Heading,LoadingProgress } from '../../components/index'
 import { getEnglishStories, getHindiStories } from '../../store/action/story.actions';
 
 const useStyles = makeStyles((theme) => ({
