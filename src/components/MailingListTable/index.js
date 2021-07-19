@@ -63,10 +63,10 @@ export default function MailingListTable(props) {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    const deleteEntry = (id) => {
-        alert(id);
-        dispatch(deleteEmail.request(id));
-        // console.log(index);
+    const deleteEntry = (index) => {
+        const data = {id:index}
+        alert(index);
+        dispatch(deleteEmail.request(index));
     };
     // return (
     //     <div style={{ height: 400, width: '100%' }}>
